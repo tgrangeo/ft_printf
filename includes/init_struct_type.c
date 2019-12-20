@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_init_struct.c                                 .::    .:/ .      .::   */
+/*   init_struct_type.c                               .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/07 19:12:57 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/13 13:51:00 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 15:28:30 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void		ft_init_struct(struct s_printf *new)
+void		ft_init_struct(struct type *new)
 {
 	ft_tabft(new);
 	ft_tab_i(new);
-	new->i_conv = 0;
-	new->width = 0;
+	new->type = 0;
 }
 
-void		ft_tabft(struct s_printf *new)
+void		ft_tabft(struct type *new)
 {
 	new->ft[0] = ft_printf_c;
 	new->ft[1] = ft_printf_d;
@@ -33,7 +32,7 @@ void		ft_tabft(struct s_printf *new)
 	new->ft[7] = ft_printf_p;
 }
 
-void		ft_tab_i(struct s_printf *new)
+void		ft_tab_i(struct type *new)
 {
 	new->tab_i[0] = 'c';
 	new->tab_i[1] = 'd';

@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_recup.c                                       .::    .:/ .      .::   */
+/*   ft_width.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/10 15:01:19 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/17 18:21:05 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/16 16:21:58 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/20 18:38:54 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_recupend(const char *str, const char *type)
+char	*apply_width(char *str, struct flags *flag)
 {
-	unsigned long int i;
-	unsigned long int j;
+	int		len;
+	char	*width;
+	int		len_width;
+	int		i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (type[j])
-		{
-			if (type[j] == str[i])
-				return (i);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-char		*ft_recup(char *str, int start)
-{
-	char	*res;
-	int		end;
-
-	end = ft_recupend(str + start, "scdxXiup%");
-	res = ft_substr(str, start - 1, end + 1);
-	return(res);
+	len = ft_strlen(str);
+	if (flag->width <= len || flag->width == 0)
+		return (str);
+	len_width = flag->width - len;
+	width = malloc(sizeof(char) * len_width + 1);
+	while (len_width-- > 0)
+		width[i++] = ' ';
+	width[i] = '\0';
+	str = ft_strjoin(width, str);
+	return (str);
 }

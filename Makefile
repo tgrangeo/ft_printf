@@ -6,7 +6,7 @@
 #    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2019/12/17 16:42:57 by tgrangeo    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/12/20 18:26:12 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -15,8 +15,8 @@
 HEADER = ft_printf.h
 
 SRCS = ft_printf.c includes/ft_find_index.c includes/ft_itoa_base.c includes/ft_putnbr_u.c includes/init_struct_type.c\
-includes/ft_type.c includes/ft_type2.c includes/ft_recup.c includes/ft_traitement.c includes/ft_flags.c\
-includes/init_struct_flags.c\
+includes/ft_type.c includes/ft_type2.c includes/ft_traitement.c flags/ft_width.c flags/ft_precision.c\
+includes/init_struct_flags.c flags/ft_prec_width.c\
 
 OBJS = ${SRCS:.c=.o}
 

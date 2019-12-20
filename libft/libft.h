@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 12:18:25 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/10 11:11:09 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 17:26:50 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -70,5 +70,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 											void (*del)(void *));
+char				*ft_strndup(char *str, int len);
 
 #endif

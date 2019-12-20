@@ -6,32 +6,32 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/17 18:55:12 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 18:23:52 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int			ft_traitement(char *str, struct s_printf *print, va_list *list)
+int			ft_traitement(struct type *print, va_list *list, struct flags *flag)
 {
-	int 			i;
 	char			*ret;
-	struct flags	flag;
 
-	ret = NULL;
-	i = ft_recupend(str, "scdiuxXp%");
-	init_struct_flags(&flag, str, list);
-	print->i_conv = ft_find_index(str[i], print);
-	if (print->i_conv >= 0 && print->i_conv != 8)
-		print->ft[print->i_conv](list, &ret);
-	else if (print->i_conv == 8)
+	ret = ft_strdup("");
+	print->type = ft_find_index(flag->type, print);
+	if (print->type >= 0 && print->type != 8)
+		print->ft[print->type](list, &ret);
+	else if (print->type == 8)
 		ft_printf_100(&ret);
-	if (flag.width > 0)
-		ret = apply_width(ret, &flag);
+	if (flag->width > 0 && flag->precision == 0)
+		ret = apply_width(ret, flag);
+	if (flag->precision >= 0 && flag->width == 0)
+		ret = apply_precision(ret, flag);
+	if (flag->precision >= 0 && flag->width > 0)
+		ret = width_precision(ret, flag);
 	ft_putstr_fd(ret, 1);
 	free(ret);
-	return (i + 1);
+	return (1);
 }
 
 int		ft_count(const char *str, int start)

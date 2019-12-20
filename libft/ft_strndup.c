@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strjoin.c                                     .::    .:/ .      .::   */
+/*   ft_strndup.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:38:32 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/20 16:23:53 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/20 16:53:42 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strndup(char *str, int len)
 {
 	int		i;
-	int		j;
-	char	*new;
+	char	*res;
 
-	j = 0;
 	i = 0;
-	new = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	while (s1[j])
+	res = malloc(sizeof(char) * len);
+	while (str[i] && i < len)
 	{
-		new[i] = s1[j];
+		res[i] = str[i];
 		i++;
-		j++;
 	}
-	j = 0;
-	if (s2[j] != '\0')
-		while (s2[j])
-		{
-			new[i] = s2[j];
-			i++;
-			j++;
-		}
-	//free(s2);
-	new[i] = '\0';
-	return (new);
+	res[i] = '\0';
+	return (res);
 }
