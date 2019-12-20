@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:25:44 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 19:15:03 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -66,5 +66,6 @@ char		*apply_precision(char *str, struct flags *flag);
 char		*ft_duix(char *str, struct flags *flag, int len);
 char		*ft_neg(char *prec, int len_prec, char *str);
 char		*width_precision(char *str, struct flags *flag);
+char		*apply_neg_width(char *str, struct flags *flag);
 
 #endif

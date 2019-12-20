@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 16:10:35 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 19:25:20 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,12 +61,6 @@ int		init_struct_flags(struct flags *new, char *str, va_list *list)
 		}
 		i++;
 	}
-	/*printf("\n---------\nsigne:%d\n", new->signe);
-	printf("zero:%d\n", new->zero);
-	printf("width:%d\n", new->width);
-	printf("precision:%d\n", new->precision);
-	printf("type:%c\n", new->type);
-	printf("end:%d\n", new->end);*/
 	if (new->type > 0)
 		return (1);
 	else

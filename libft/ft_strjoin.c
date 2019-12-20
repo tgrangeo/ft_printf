@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:38:32 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 18:44:16 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,6 +38,7 @@ char	*ft_strjoin(char *s1, char *s2)
 			j++;
 		}
 	//free(s2);
+	//free(s1);
 	new[i] = '\0';
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:23:52 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/20 19:24:57 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ int			ft_traitement(struct type *print, va_list *list, struct flags *flag)
 		print->ft[print->type](list, &ret);
 	else if (print->type == 8)
 		ft_printf_100(&ret);
-	if (flag->width > 0 && flag->precision == 0)
+	if (flag->width > 0 && flag->precision == -1)
 		ret = apply_width(ret, flag);
 	if (flag->precision >= 0 && flag->width == 0)
 		ret = apply_precision(ret, flag);
