@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 19:25:20 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 15:56:55 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,7 @@ int		init_struct_flags(struct flags *new, char *str, va_list *list)
 	new->signe = 0;
 	new->zero = 0;
 	new->width = 0;
-	new->precision = -1;
+	new->precision = -2;
 	new->type = ft_recuptype(str + 1, "scdiuxXp%");
 	new->end = ft_recupend(str + 1, "scdiuxXp%");
 	while (str[i] && i < new->end)
@@ -35,6 +35,8 @@ int		init_struct_flags(struct flags *new, char *str, va_list *list)
 		
 		if (str[i] == '0' && str[i - 1] == '%' && new->signe != 1)
 			new->zero = 1;
+		if (str[i] == '.' && new->end >= 0)
+			new->precision = -1;
 		if (ft_isdigit(str[i]) > 0 && str[i - 1] != '.' && ft_isdigit(str[i - 1]) == 0)
 			new->width = ft_count(str, i);
 		if ((ft_isdigit(str[i]) > 0) && str[i - 1] == '.' && (ft_isdigit(str[i - 1]) == 0))
@@ -104,5 +106,5 @@ int	ft_recupend(const char *str, const char *type)
 		}
 		i++;
 	}
-	return (1);
+	return (-1);
 }

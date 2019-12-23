@@ -3,10 +3,10 @@
 #                                                               /              #
 #    Makefile                                         .::    .:/ .      .::    #
 #                                                  +:+:+   +:    +:  +:+:+     #
-#    By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+      #
+#    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2019/12/21 12:07:01 by thomasgrang ###    #+. /#+    ###.fr      #
+#    Updated: 2019/12/23 12:42:11 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -41,7 +41,10 @@ $(NAME): $(OBJS) $(HEADER)
 test: fclean all
 	@gcc main.c $(NAME)
 	@./a.out
-	
+
+t: fclean all
+	@gcc main.c $(NAME)
+	@cp libftprintf.a test_printf/
 	
 clean:
 	$(RM) $(OBJS)

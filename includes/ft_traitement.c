@@ -3,37 +3,35 @@
 /*                                                              /             */
 /*   ft_traitement.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/21 11:25:39 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 16:00:42 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int			ft_traitement(struct type *print, va_list *list, struct flags *flag)
+char	*ft_traitement(struct type *print, va_list *list, struct flags *flag)
 {
-	char			*ret;
+	char	*ret;
 
 	ret = ft_strdup("");
 	print->type = ft_find_index(flag->type, print);
-	if (print->type >= 0 && print->type != 8)
+	if (print->type >= 0 && print->type <= 7)
 		print->ft[print->type](list, &ret);
-	else if (print->type == 8)
+	else if (print->type > 7)
 		ft_printf_100(&ret);
-	if (flag->width > 0 && flag->precision == -1 && flag->zero == 0)
+	if (flag->width > 0 && flag->precision == -2 && flag->zero == 0)
 		ret = apply_width(ret, flag);
-	if (flag->precision >= 0 && flag->width == 0)
+	if (flag->precision >= -1 && flag->width == 0)
 		ret = apply_precision(ret, flag);
 	if (flag->precision >= 0 && flag->width > 0)
 		ret = width_precision(ret, flag);
 	if (flag->width > 0 && flag->zero > 0)
 		ret = ft_zero_width(ret, flag);
-	ft_putstr_fd(ret, 1);
-	free(ret);
-	return (1);
+	return (ret);
 }
 
 int		ft_count(const char *str, int start)

@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:39:37 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/12 12:23:08 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 12:46:26 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -41,7 +41,12 @@ void		ft_printf_p(va_list *list, char **res)
 	char			*str;
 
 	n = va_arg(*list, unsigned long);
-	str = ft_strjoin("0x", ft_itoa_base(n, "0123456789abcdef"));
-	*res = ft_strdup(str);
+	if (n == 0)
+		*res = ft_strdup("0x0");
+	else
+	{
+		str = ft_strjoin("0x", ft_itoa_base(n, "0123456789abcdef"));
+		*res = ft_strdup(str);
+	}
 	//free(str);
 }

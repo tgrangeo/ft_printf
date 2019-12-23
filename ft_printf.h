@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_printf.h                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/21 11:24:53 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 16:00:22 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,7 +55,7 @@ void		ft_tabft(struct type *new);
 void		ft_tab_i(struct type *new);
 void		ft_printf_p(va_list *s_list, char **res);
 char		*ft_recup(char *str, int start);
-int			ft_traitement(struct type *print, va_list *list, struct flags *flag);
+char		*ft_traitement(struct type *print, va_list *list, struct flags *flag);
 int			ft_recupend(const char *str, const char *type);
 int			ft_count(const char *str, int start);
 char		*apply_width(char *str, struct flags *flag);

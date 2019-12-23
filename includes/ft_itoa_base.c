@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/06 12:56:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/10 15:00:35 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 12:59:17 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,6 +39,8 @@ char		*ft_itoa_base(long n, char *base)
 	long int	nb;
 	int			rest;
 
+	if (n == 0)
+		return (ft_strdup("0"));
 	nb = n;
 	len_base = ft_strlen(base);
 	len = ft_taille(nb, len_base);

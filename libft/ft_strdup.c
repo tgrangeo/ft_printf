@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 12:40:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/05 09:47:48 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 10:43:33 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *src)
 
 	j = 0;
 	dest = NULL;
+	if (src == NULL)
+		return(dest);
 	while (src[j] != '\0')
 	{
 		j++;

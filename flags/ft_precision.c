@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_precision.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/21 11:49:07 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/23 13:21:09 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,6 +20,8 @@ char	*apply_precision(char *str, struct flags *flag)
 
 	len = ft_strlen(str);
 	res = NULL;
+	if (flag->precision == -1 && flag->type != 'p')
+		return (ft_strdup(""));
 	if (flag->type == 'c' || flag->type == 'p' || flag->type == '%')
 		return (str);
 	if (flag->type == 's')
