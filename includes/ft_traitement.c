@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_traitement.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 19:24:57 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/21 11:25:39 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,12 +23,14 @@ int			ft_traitement(struct type *print, va_list *list, struct flags *flag)
 		print->ft[print->type](list, &ret);
 	else if (print->type == 8)
 		ft_printf_100(&ret);
-	if (flag->width > 0 && flag->precision == -1)
+	if (flag->width > 0 && flag->precision == -1 && flag->zero == 0)
 		ret = apply_width(ret, flag);
 	if (flag->precision >= 0 && flag->width == 0)
 		ret = apply_precision(ret, flag);
 	if (flag->precision >= 0 && flag->width > 0)
 		ret = width_precision(ret, flag);
+	if (flag->width > 0 && flag->zero > 0)
+		ret = ft_zero_width(ret, flag);
 	ft_putstr_fd(ret, 1);
 	free(ret);
 	return (1);

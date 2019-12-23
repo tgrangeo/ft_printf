@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_type.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:34:34 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/16 16:06:41 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/21 12:33:21 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,10 @@ void		ft_printf_s(va_list *list, char **res)
 	char	*str;
 
 	str = va_arg(*list, char *);
-	*res = ft_strdup(str);
+	if (str != NULL)
+		*res = ft_strdup(str);
+	else
+		*res = NULL;
 }
 
 void		ft_printf_c(va_list *list, char **res)

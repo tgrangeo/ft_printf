@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_printf.h                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 19:15:03 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/21 11:24:53 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -67,5 +67,6 @@ char		*ft_duix(char *str, struct flags *flag, int len);
 char		*ft_neg(char *prec, int len_prec, char *str);
 char		*width_precision(char *str, struct flags *flag);
 char		*apply_neg_width(char *str, struct flags *flag);
+char		*ft_zero_width(char *str, struct flags *flag);
 
 #endif

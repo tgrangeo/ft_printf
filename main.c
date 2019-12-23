@@ -7,52 +7,52 @@ int main()
 	int n = -42;
 	char *s = "l'empereur grignoteur";
 	char c = 98;
-	unsigned int u = -842;
-	int i = 42;
+	unsigned int u = 842;
+	int i = -42;
 
 //TODO:conversion P
 printf("conversion: %%p\n");
-printf("|%-50p|\n", &c);
-ft_printf("|%-50p|\n\n", &c);
+printf("|%0p|\n", &c);
+ft_printf("|%0p|\n\n", &c);
 
 //TODO:conversion u
 printf("conversion: %%u\n");
-printf("|%-50.30u|\n", u);
-ft_printf("|%-50.30u|\n\n", u);
+printf("|%015.10u|\n", u);
+ft_printf("|%015.10u|\n\n", u);
 
 //TODO:conversion i
 printf("conversion: %%i\n");
-printf("|%-50.30i|\n", i);
-ft_printf("|%-50.30i|\n\n", i);
+printf("|%015.10i|\n", i);
+ft_printf("|%015.10i|\n\n", i);
 
 //TODO:conversion d
 printf("conversion: %%d\n");
-printf("|%-50.30d|\n", n);
-ft_printf("|%-50.30d|\n\n", n);
+printf("/pp %.50d/\n", 10000);
+ft_printf("/pp %.50d/\n\n", 10000);
 
 //TODO:conversion s
 printf("conversion: %%s\n");
-printf("|%-50.3s|\n", s);
-ft_printf("|%-50.3s|\n\n", s);
+printf("p3 %.4s\n", NULL);
+ft_printf("p3 %.4s\n\n", NULL);
 
 //TODO:conversion c
 printf("conversion: %%c\n");
-printf("|%-50c|\n", c);
-ft_printf("|%-50c|\n\n", c);
+printf("p2 -%.10s-\n", "cccc");
+ft_printf("p2 -%.10s-\n\n", "cccc");
 
 //TODO:conversion x
 printf("conversion: %%x\n");
-printf("|%-50.30x|\n", x);
-ft_printf("|%-50.30x|\n\n", x);
+printf("|%015x|\n", x);
+ft_printf("|%015x|\n\n", x);
 
 //TODO:conversion X
 printf("conversion: %%X\n");
-printf("|%-50.30X|\n", x);
-ft_printf("|%-50.30X|\n\n", x);
+printf("|%015X|\n", x);
+ft_printf("|%015X|\n\n", x);
 
 //TODO:conversion %
 printf("conversion: %%\n");
-printf("|%-50.30%|\n");
-ft_printf("|%-50.30%|\n\n");
+printf("|%015%|\n");
+ft_printf("|%015%|\n\n");
 return (1);
 }

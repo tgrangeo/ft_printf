@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_precision.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:06:32 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/21 11:49:07 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
