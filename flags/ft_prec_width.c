@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_prec_width.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 18:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:40:27 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/03 11:11:05 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */

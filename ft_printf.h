@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_printf.h                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/23 16:00:22 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/02 17:18:10 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -41,7 +41,7 @@ struct		flags
 int			ft_find_index(char c, struct type *new);
 int			ft_printf(char *str,
 				...) __attribute__((format(printf,1,2)));
-char		*ft_itoa_base(long int n, char *base);
+char		*ft_itoa_base(unsigned long n, char *base);
 void		ft_putnbr_u(int n);
 void		ft_init_struct(struct type *new);
 void		ft_printf_s(va_list *list, char **res);
@@ -68,5 +68,8 @@ char		*ft_neg(char *prec, int len_prec, char *str);
 char		*width_precision(char *str, struct flags *flag);
 char		*apply_neg_width(char *str, struct flags *flag);
 char		*ft_zero_width(char *str, struct flags *flag);
+char		*ft_long_itoa_base(unsigned long n, char *base);
+void		ft_init_struct_flags2(char *str, struct flags *new);
+void		ft_init_struct_flags3(char *str, struct flags *new, va_list *list, int i);
 
 #endif

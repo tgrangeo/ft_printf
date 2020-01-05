@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_strjoin.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 18:44:16 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 10:23:52 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,10 +14,10 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(const char *s1,const char *s2)
 {
 	int		i;
-	int		j;
+	size_t		j;
 	char	*new;
 
 	j = 0;

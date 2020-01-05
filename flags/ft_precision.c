@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_precision.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/23 13:21:09 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/03 11:36:17 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -49,8 +49,13 @@ char	*ft_duix(char *str, struct flags *flag, int len)
 
 	i = 0;
 	prec = NULL;
-	len_prec = flag->precision - len;
+	if (flag->precision <= len)
+		len_prec = flag->precision;
+	else
+		len_prec = flag->precision - len;
 	res = NULL;
+	if (flag->precision == 0)
+		return (ft_strdup(str));
 	if (len_prec < 0)
 		res = ft_strdup(str);
 	if (len_prec > 0)
@@ -60,8 +65,9 @@ char	*ft_duix(char *str, struct flags *flag, int len)
 		else
 		{
 			prec = malloc(sizeof(char) * len_prec + 1);
-			while (len_prec-- > 0)
-				prec[i++] = '0';
+			if (len_prec > 1)
+				while (len_prec-- > 0)
+					prec[i++] = '0';
 			prec[i] = '\0';
 			res = ft_strjoin(prec, str);
 		}

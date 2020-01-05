@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_type2.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:39:37 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/23 12:46:26 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 10:14:54 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,7 +45,7 @@ void		ft_printf_p(va_list *list, char **res)
 		*res = ft_strdup("0x0");
 	else
 	{
-		str = ft_strjoin("0x", ft_itoa_base(n, "0123456789abcdef"));
+		str = ft_strjoin("0x", ft_long_itoa_base(n, "0123456789abcdef"));
 		*res = ft_strdup(str);
 	}
 	//free(str);

@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_putnbr_u.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/06 14:07:02 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/10 11:16:46 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/02 11:24:55 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */

@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   init_struct_flags.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/23 15:56:55 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/02 17:17:59 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,6 +25,19 @@ int		init_struct_flags(struct flags *new, char *str, va_list *list)
 	new->precision = -2;
 	new->type = ft_recuptype(str + 1, "scdiuxXp%");
 	new->end = ft_recupend(str + 1, "scdiuxXp%");
+	ft_init_struct_flags2(str, new);
+	ft_init_struct_flags3(str, new, list, i);
+	if (new->type > 0)
+		return (1);
+	else
+		return (0);
+}
+
+void	ft_init_struct_flags2(char *str, struct flags *new)
+{
+	int i;
+	
+	i = 0;
 	while (str[i] && i < new->end)
 	{
 		if (str[i] == '-' && str[i - 1] == '%')
@@ -41,6 +54,14 @@ int		init_struct_flags(struct flags *new, char *str, va_list *list)
 			new->width = ft_count(str, i);
 		if ((ft_isdigit(str[i]) > 0) && str[i - 1] == '.' && (ft_isdigit(str[i - 1]) == 0))
 			new->precision = ft_count(str, i);
+		i++;
+	}
+}
+
+void	ft_init_struct_flags3(char *str, struct flags *new, va_list *list, int i)
+{
+	while (str[i] && i < new->end)
+	{
 		if(str[i] == '*' && str[i - 1] != '.')
 		{
 			new->width = va_arg(*list, int);
@@ -63,10 +84,6 @@ int		init_struct_flags(struct flags *new, char *str, va_list *list)
 		}
 		i++;
 	}
-	if (new->type > 0)
-		return (1);
-	else
-		return (0);
 }
 
 char		ft_recuptype(char *str, char *type)
