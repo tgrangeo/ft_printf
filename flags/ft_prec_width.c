@@ -3,14 +3,13 @@
 /*                                                              /             */
 /*   ft_prec_width.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 18:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/03 11:11:05 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 12:19:11 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
-
 
 #include "../ft_printf.h"
 

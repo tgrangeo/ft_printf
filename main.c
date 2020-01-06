@@ -11,48 +11,48 @@ int main()
 	int i = 0;
 
 //TODO:conversion P
-printf("conversion: %%p\n");
-printf("|%p|\n", (void *)-1);
-ft_printf("|%p|\n", (void *)-1);
+printf("-----conversion-----: %%p\n");
+dprintf(1, "%d\n", printf("|%.p|\n", 0));
+ft_printf("|%.p|\n", 0);
 
 //TODO:conversion u
-printf("conversion: %%u\n");
-printf("|%10.1u|\n", 9);
-ft_printf("|%10.1u|\n", 9);
+printf("-----conversion-----: %%u\n");
+dprintf(1, "%d\n", printf("|%.u|\n", 9));
+ft_printf("|%.u|\n", 9);
 
 //TODO:conversion i
-printf("conversion: %%i\n");
-printf("|%.0i|\n", 2);
+printf("-----conversion-----: %%i\n");
+dprintf(1, "%d\n", printf("|%.0i|\n", 2));
 ft_printf("|%.0i|\n", 2);
 
 //TODO:conversion d
-printf("conversion: %%d\n");
-printf("*%d*\n", printf("|%.0d|\n", 0));
-printf("*%d*\n", ft_printf("|%.0d|\n", 0));
+printf("-----conversion-----: %%d\n");
+dprintf(1, "%d\n", printf("|%.d|\n", 0));
+ft_printf("|%.d|\n", 0);
 
 //TODO:conversion c
-printf("conversion: %%c\n");
-printf("*%d*\n", printf("|%c|\n", 0));
-printf("*%d*\n", ft_printf("|%c|\n", 0));
+printf("-----conversion-----: %%c\n");
+dprintf(1, "%d\n", printf("|%c|\n", 0));
+ft_printf("|%c|\n", 0);
 
 //TODO:conversion s
-printf("conversion: %%s\n");
-printf("|%012.2s|\n", "c3hfdgjnhudgjsrmhfdi");
-ft_printf("|%012.2s|\n", "c3hfdgjnhudgjsrmhfdi");
+printf("-----conversion-----: %%s\n");
+dprintf(1, "%d\n", printf("|%.s|\n", "c3hfdgjnhudgjsrmhfdi"));
+ft_printf("|%.s|\n", "c3hfdgjnhudgjsrmhfdi");
 
 //TODO:conversion x
-printf("conversion: %%x\n");
-printf("*%d*\n", printf("|%15x|\n", x));
-printf("*%d*\n", ft_printf("|%15x|\n", x));
+printf("-----conversion-----: %%x\n");
+dprintf(1, "%d\n", printf("|%15x|\n", x));
+ft_printf("|%15x|\n", x);
 
 //TODO:conversion X
-printf("conversion: %%X\n");
-printf("|%015X|\n", x);
-ft_printf("|%015X|\n\n", x);
+ printf("-----conversion-----: %%X\n");
+dprintf(1, "%d\n",printf("|%015X|\n", x));
+ft_printf("|%015X|\n", x);
 
 //TODO:conversion %
-printf("conversion: %%%%%%%%%%%%%%\n");
-printf("|%015%|\n");
-ft_printf("|%015%|\n\n");
+ printf("-----conversion-----: %%\n");
+dprintf(1, "%d\n", printf("|%015%|\n"));
+ft_printf("|%015%|\n");
 return (1);
 }

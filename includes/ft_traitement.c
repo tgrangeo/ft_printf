@@ -3,35 +3,59 @@
 /*                                                              /             */
 /*   ft_traitement.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/02 19:47:53 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:09:58 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*ft_traitement(struct type *print, va_list *list, struct flags *flag)
+int		ft_traitement(va_list *list, struct flags *flag, char **ret)
 {
-	char	*ret;
+	int len;
 
-	ret = ft_strdup("");
-	print->type = ft_find_index(flag->type, print);
-	if (print->type >= 0 && print->type <= 7)
-		print->ft[print->type](list, &ret);
-	else if (print->type > 7)
-		ft_printf_100(&ret);
+	len = 0;
+	*ret = ft_strdup("");
+	*ret = ft_send(flag, ret, list);
 	if (flag->width > 0 && flag->precision == -2 && flag->zero == 0)
-		ret = apply_width(ret, flag);
+		*ret = apply_width(*ret, flag);
 	if (flag->precision >= -1 && flag->width == 0)
-		ret = apply_precision(ret, flag);
+		*ret = apply_precision(*ret, flag);
 	if (flag->precision >= 0 && flag->width > 0)
-		ret = width_precision(ret, flag);
+		*ret = width_precision(*ret, flag);
 	if (flag->width > 0 && flag->zero > 0)
-		ret = ft_zero_width(ret, flag);
-	return (ret);
+		*ret = ft_zero_width(*ret, flag);
+	if (flag->type == 'c' && *ret[0] == '\0')
+		len++;
+	else
+		len = ft_strlen(*ret);
+	return (len);
+}
+
+char	*ft_send(struct flags *flag, char **ret, va_list *list)
+{
+	if (flag->type == 'd')
+		ft_printf_d(list, ret);
+	if (flag->type == 's')
+		ft_printf_s(list, ret);
+	if (flag->type == 'x')
+		ft_printf_x(list, ret);
+	if (flag->type == 'X')
+		ft_printf_x_upper(list, ret);
+	if (flag->type == 'u')
+		ft_printf_u(list, ret);
+	if (flag->type == 'i')
+		ft_printf_d(list, ret);
+	if (flag->type == 'p')
+		ft_printf_p(list, ret);
+	if (flag->type == 'c')
+		ft_printf_c(list, ret);
+	if (flag->type == '%')
+		ft_printf_100(ret);
+	return (*ret);
 }
 
 int		ft_count(const char *str, int start)

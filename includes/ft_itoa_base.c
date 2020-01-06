@@ -3,17 +3,17 @@
 /*                                                              /             */
 /*   ft_itoa_base.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/06 12:56:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 17:42:35 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 17:21:03 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int	ft_taille(long int n, int len_base)
+static int		ft_taille(long int n, int len_base)
 {
 	int			i;
 
@@ -31,7 +31,7 @@ static int	ft_taille(long int n, int len_base)
 		return (i);
 }
 
-static int	ft_long_taille(unsigned long n, unsigned long len_base)
+static int		ft_long_taille(unsigned long n, unsigned long len_base)
 {
 	int			i;
 
@@ -48,7 +48,8 @@ static int	ft_long_taille(unsigned long n, unsigned long len_base)
 	else
 		return (i);
 }
-char		*ft_itoa_base(unsigned long n, char *base)
+
+char			*ft_itoa_base(unsigned long n, char *base)
 {
 	char		*str;
 	int			len;
@@ -73,13 +74,13 @@ char		*ft_itoa_base(unsigned long n, char *base)
 	return (str);
 }
 
-char		*ft_long_itoa_base(unsigned long n, char *base)
+char			*ft_long_itoa_base(unsigned long n, char *base)
 {
-	char		*str;
+	char			*str;
 	int			len;
 	unsigned long	len_base;
 	unsigned long	nb;
-	int			rest;
+	unsigned long	rest;
 
 	if (n == 0)
 		return (ft_strdup("0"));

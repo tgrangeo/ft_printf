@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_zero.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/21 11:22:14 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/21 11:48:28 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 12:19:55 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */

@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_type2.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:39:37 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 10:14:54 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:23:07 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,6 @@ void		ft_printf_x_upper(va_list *list, char **res)
 	n = va_arg(*list, unsigned long);
 	str = ft_itoa_base(n, "0123456789ABCDEF");
 	*res = ft_strdup(str);
-	//free(str);
 }
 
 void		ft_printf_x(va_list *list, char **res)
@@ -32,21 +31,22 @@ void		ft_printf_x(va_list *list, char **res)
 	n = va_arg(*list, unsigned long);
 	str = ft_itoa_base(n, "0123456789abcdef");
 	*res = ft_strdup(str);
-	//free(str);
 }
 
 void		ft_printf_p(va_list *list, char **res)
 {
 	unsigned long	n;
 	char			*str;
+	char			*s;
 
+	str = NULL;
 	n = va_arg(*list, unsigned long);
+	s = ft_long_itoa_base(n, "0123456789abcdef");
 	if (n == 0)
 		*res = ft_strdup("0x0");
 	else
 	{
-		str = ft_strjoin("0x", ft_long_itoa_base(n, "0123456789abcdef"));
+		str = ft_strjoin("0x", s);
 		*res = ft_strdup(str);
 	}
-	//free(str);
 }

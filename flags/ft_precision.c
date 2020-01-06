@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_precision.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/03 11:36:17 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 20:07:12 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,9 @@ char	*apply_precision(char *str, struct flags *flag)
 
 	len = ft_strlen(str);
 	res = NULL;
-	if (flag->precision == -1 && flag->type != 'p')
+	if (flag->precision == -1 && flag->type != 's')
+		return (ft_strdup(str));
+	else if (flag->precision == -1 && (flag->type == 's'))
 		return (ft_strdup(""));
 	if (flag->type == 'c' || flag->type == 'p' || flag->type == '%')
 		return (str);
@@ -36,7 +38,6 @@ char	*apply_precision(char *str, struct flags *flag)
 	if (flag->type == 'd' || flag->type == 'u' || flag->type == 'i'
 							|| flag->type == 'x' || flag->type == 'X')
 		res = ft_duix(str, flag, len);
-	free(str);
 	return (res);
 }
 

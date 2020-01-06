@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/28 10:15:11 by tclaudel     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/23 12:07:48 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 20:00:02 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -2262,6 +2262,7 @@ if(ft_c_in_str('c', av[1])|| ft_c_in_str('a', av[1]))
 	{
 		tested++;
 		print_testing("\"|%0.0x|\\n\", random");
+		dprintf(1, "+++%c++++", unb[i]);
 		if (printf("printf    :\t|%0.0x|\n", unb[i]) == ft_printf("ft_printf :\t|%0.0x|\n", unb[i]))
 			print_ok(&testok);
 		else
