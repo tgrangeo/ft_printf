@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   test.c                                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/28 10:15:11 by tclaudel     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 20:00:02 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 23:28:32 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -1374,6 +1374,7 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	i = 0;
 	while (i < 20)
 	{
+		//printf("[%s]\n", str[i]);
 		tested++;
 		print_testing("\"|%s|\\n\",  random");
 		if (printf("printf    :\t|%s|\n", str[i]) == ft_printf("ft_printf :\t|%s|\n", str[i]))
