@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 19:09:58 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 13:44:31 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,6 +24,7 @@ int		ft_traitement(va_list *list, struct flags *flag, char **ret)
 		*ret = apply_width(*ret, flag);
 	if (flag->precision >= -1 && flag->width == 0)
 		*ret = apply_precision(*ret, flag);
+		//todo
 	if (flag->precision >= 0 && flag->width > 0)
 		*ret = width_precision(*ret, flag);
 	if (flag->width > 0 && flag->zero > 0)

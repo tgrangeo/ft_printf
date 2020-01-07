@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 20:07:12 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 11:45:59 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,10 +20,10 @@ char	*apply_precision(char *str, struct flags *flag)
 
 	len = ft_strlen(str);
 	res = NULL;
-	if (flag->precision == -1 && flag->type != 's')
-		return (ft_strdup(str));
-	else if (flag->precision == -1 && (flag->type == 's'))
+	if (flag->precision == -1 && flag->type != 'p')
 		return (ft_strdup(""));
+	else if (flag->precision == -1 && (flag->type == 'p'))
+		return (ft_strdup(str));
 	if (flag->type == 'c' || flag->type == 'p' || flag->type == '%')
 		return (str);
 	if (flag->type == 's')
@@ -60,19 +60,7 @@ char	*ft_duix(char *str, struct flags *flag, int len)
 	if (len_prec < 0)
 		res = ft_strdup(str);
 	if (len_prec > 0)
-	{
-		if (str[i] == '-')
-			res = ft_neg(prec, len_prec, str);
-		else
-		{
-			prec = malloc(sizeof(char) * len_prec + 1);
-			if (len_prec > 1)
-				while (len_prec-- > 0)
-					prec[i++] = '0';
-			prec[i] = '\0';
-			res = ft_strjoin(prec, str);
-		}
-	}
+		res = ft_neg(prec, len_prec, str);
 	return (res);
 }
 
@@ -81,11 +69,24 @@ char	*ft_neg(char *prec, int len_prec, char *str)
 	int	i;
 
 	i = 0;
-	prec = malloc(sizeof(char) * len_prec);
-	str = ft_substr(str, 1, ft_strlen(str) - 1);
-	prec[i++] = '-';
-	while (len_prec-- >= 0)
-		prec[i++] = '0';
-	prec[i] = '\0';
-	return (ft_strjoin(prec, str));
+
+	if (str[i] == '-')
+	{
+		prec = malloc(sizeof(char) * len_prec);
+		str = ft_substr(str, 1, ft_strlen(str) - 1);
+		prec[i++] = '-';
+		while (len_prec-- >= 0)
+			prec[i++] = '0';
+		prec[i] = '\0';
+		return (ft_strjoin(prec, str));
+	}
+	else
+	{
+		prec = malloc(sizeof(char) * len_prec + 1);
+		if (len_prec > 1)
+			while (len_prec-- > 0)
+				prec[i++] = '0';
+		prec[i] = '\0';
+		return (ft_strjoin(prec, str));
+	}
 }
