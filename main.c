@@ -22,13 +22,13 @@ ft_printf("|%.u|\n", 9);
 
 //TODO:conversion i
 printf("-----conversion-----: %%i\n");
-dprintf(1, "%d\n", printf("|%.0i|\n", 2));
-ft_printf("|%.0i|\n", 2);
+dprintf(1, "%d\n", printf("|%.0i|\n", 0));
+ft_printf("|%.0i|\n", 0);
 
 //TODO:conversion d
 printf("-----conversion-----: %%d\n");
-dprintf(1, "%d\n", printf("|%.d|\n", 0));
-ft_printf("|%.d|\n", 0);
+dprintf(1, "%d\n", printf("|%.0d|\n", 0));
+ft_printf("|%.0d|\n", 0);
 
 //TODO:conversion c
 printf("-----conversion-----: %%c\n");
@@ -37,8 +37,8 @@ ft_printf("|%c|\n", 0);
 
 //TODO:conversion s
 printf("-----conversion-----: %%s\n");
-dprintf(1, "%d\n", printf("|%.s|\n", "c3hfdgjnhudgjsrmhfdi"));
-ft_printf("|%.s|\n", "c3hfdgjnhudgjsrmhfdi");
+dprintf(1, "%d\n", printf("|%.0s|\n", ""));
+ft_printf("|%.0s|\n", "");
 
 //TODO:conversion x
 printf("-----conversion-----: %%x\n");

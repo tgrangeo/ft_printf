@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:11:50 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 13:31:53 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 17:24:26 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,5 +42,6 @@ int			ft_printf(char *str, ...)
 		i++;
 		len++;
 	}
+	printf("%d\n", len);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 11:45:59 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/09 13:00:59 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,9 +20,9 @@ char	*apply_precision(char *str, struct flags *flag)
 
 	len = ft_strlen(str);
 	res = NULL;
-	if (flag->precision == -1 && flag->type != 'p')
+	if (flag->precision == -1 && (flag->type != 'p' && ft_isduix(flag) == 0))
 		return (ft_strdup(""));
-	else if (flag->precision == -1 && (flag->type == 'p'))
+	if (flag->precision == -1 && (flag->type == 'p' || ft_isduix(flag) > 0))
 		return (ft_strdup(str));
 	if (flag->type == 'c' || flag->type == 'p' || flag->type == '%')
 		return (str);
@@ -30,13 +30,12 @@ char	*apply_precision(char *str, struct flags *flag)
 	{
 		if (len == 0)
 			res = ft_strdup("");
-		if (flag->precision > len)
+		if (flag->precision >= len)
 			res = ft_strdup(str);
 		if (flag->precision < len)
 			res = ft_strndup(str, flag->precision);
 	}
-	if (flag->type == 'd' || flag->type == 'u' || flag->type == 'i'
-							|| flag->type == 'x' || flag->type == 'X')
+	if (ft_isduix(flag) > 0)
 		res = ft_duix(str, flag, len);
 	return (res);
 }
@@ -50,14 +49,11 @@ char	*ft_duix(char *str, struct flags *flag, int len)
 
 	i = 0;
 	prec = NULL;
-	if (flag->precision <= len)
-		len_prec = flag->precision;
-	else
-		len_prec = flag->precision - len;
+	len_prec = flag->precision - len;
 	res = NULL;
-	if (flag->precision == 0)
+	if (len_prec == 0)
 		return (ft_strdup(str));
-	if (len_prec < 0)
+	if (len_prec <= 0)
 		res = ft_strdup(str);
 	if (len_prec > 0)
 		res = ft_neg(prec, len_prec, str);
@@ -72,13 +68,13 @@ char	*ft_neg(char *prec, int len_prec, char *str)
 
 	if (str[i] == '-')
 	{
+		len_prec++;
 		prec = malloc(sizeof(char) * len_prec);
-		str = ft_substr(str, 1, ft_strlen(str) - 1);
 		prec[i++] = '-';
-		while (len_prec-- >= 0)
+		while (i <= len_prec)
 			prec[i++] = '0';
 		prec[i] = '\0';
-		return (ft_strjoin(prec, str));
+		return (ft_strjoin(prec, str + 1));
 	}
 	else
 	{

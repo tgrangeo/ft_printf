@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 18:40:26 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/09 12:57:18 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,7 +35,7 @@ char		*ft_itoa_base(unsigned long n, char *base);
 void		ft_putnbr_u(int n);
 void		ft_printf_s(va_list *list, char **res);
 void		ft_printf_c(va_list *list, char **res);
-void		ft_printf_d(va_list *list, char **res);
+void		ft_printf_d(va_list *list, char **res, struct flags *flag);
 void		ft_printf_100(char **res);
 void		ft_printf_x(va_list *list, char **res);
 void		ft_printf_x_upper(va_list *list, char **res);
@@ -59,5 +59,6 @@ char		*ft_long_itoa_base(unsigned long n, char *base);
 void		ft_init_struct_flags2(char *str, struct flags *new);
 void		ft_init_struct_flags3(char *str, struct flags *new, va_list *list, int i);
 char		*ft_send(struct flags *flag, char **ret, va_list *list);
+int			ft_isduix(struct flags *flag);
 
 #endif

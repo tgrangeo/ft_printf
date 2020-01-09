@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 12:18:42 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 17:09:19 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -80,7 +80,6 @@ void		ft_init_struct_flags3(char *str, struct flags *new,
 			{
 				new->signe = 0;
 				new->zero = 0;
-				new->precision *= -1;
 			}
 		}
 		i++;
