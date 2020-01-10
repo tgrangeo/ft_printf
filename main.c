@@ -12,47 +12,47 @@ int main()
 
 //TODO:conversion P
 printf("-----conversion-----: %%p\n");
-dprintf(1, "%d\n", printf("|%.p|\n", 0));
-ft_printf("|%.p|\n", 0);
+dprintf(1, "%d\n", printf("|%0.0p|\n", 0));
+ft_printf("|%0.0p|\n", 0);
 
 //TODO:conversion u
 printf("-----conversion-----: %%u\n");
-dprintf(1, "%d\n", printf("|%.u|\n", 9));
-ft_printf("|%.u|\n", 9);
+dprintf(1, "%d\n", printf("|%0.0u|\n", 0));
+ft_printf("|%0.0u|\n", 0);
 
 //TODO:conversion i
 printf("-----conversion-----: %%i\n");
-dprintf(1, "%d\n", printf("|%.0i|\n", 0));
-ft_printf("|%.0i|\n", 0);
+dprintf(1, "%d\n", printf("|%1.10i|\n", -987654321));
+ft_printf("|%1.10i|\n", -987321654);
 
 //TODO:conversion d
 printf("-----conversion-----: %%d\n");
-dprintf(1, "%d\n", printf("|%.0d|\n", 0));
-ft_printf("|%.0d|\n", 0);
+dprintf(1, "%d\n", printf("|%0.*d|\n", 10, -987654321));
+ft_printf("|%0.*d|\n", 10, -987321654);
 
 //TODO:conversion c
 printf("-----conversion-----: %%c\n");
-dprintf(1, "%d\n", printf("|%c|\n", 0));
-ft_printf("|%c|\n", 0);
+dprintf(1, "%d\n", printf("|%0.0c|\n", 0));
+ft_printf("|%0.0c|\n", 0);
 
 //TODO:conversion s
 printf("-----conversion-----: %%s\n");
-dprintf(1, "%d\n", printf("|%.0s|\n", ""));
-ft_printf("|%.0s|\n", "");
+dprintf(1, "%d\n", printf("|%0.0s|\n", 0));
+ft_printf("|%0.0s|\n", 0);
 
 //TODO:conversion x
 printf("-----conversion-----: %%x\n");
-dprintf(1, "%d\n", printf("|%15x|\n", x));
-ft_printf("|%15x|\n", x);
+dprintf(1, "%d\n", printf("|%0.0x|\n", 0));
+ft_printf("|%0.0x|\n", 0);
 
 //TODO:conversion X
  printf("-----conversion-----: %%X\n");
-dprintf(1, "%d\n",printf("|%015X|\n", x));
-ft_printf("|%015X|\n", x);
+dprintf(1, "%d\n",printf("|%0.0X|\n", 0));
+ft_printf("|%0.0X|\n", 0);
 
 //TODO:conversion %
  printf("-----conversion-----: %%\n");
-dprintf(1, "%d\n", printf("|%015%|\n"));
-ft_printf("|%015%|\n");
+dprintf(1, "%d\n", printf("|%0.0%|\n"));
+ft_printf("|%0.0%|\n");
 return (1);
 }

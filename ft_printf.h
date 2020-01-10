@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 12:57:18 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/10 16:40:43 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,9 +37,9 @@ void		ft_printf_s(va_list *list, char **res);
 void		ft_printf_c(va_list *list, char **res);
 void		ft_printf_d(va_list *list, char **res, struct flags *flag);
 void		ft_printf_100(char **res);
-void		ft_printf_x(va_list *list, char **res);
-void		ft_printf_x_upper(va_list *list, char **res);
-void		ft_printf_u(va_list *list, char **res);
+void		ft_printf_x(va_list *list, char **res, struct flags *flag);
+void		ft_printf_x_upper(va_list *list, char **res, struct flags *flag);
+void		ft_printf_u(va_list *list, char **res, struct flags *flag);
 void		ft_printf_p(va_list *s_list, char **res);
 char		*ft_recup(char *str, int start);
 int			ft_traitement(va_list *list, struct flags *flag, char **ret);
@@ -60,5 +60,6 @@ void		ft_init_struct_flags2(char *str, struct flags *new);
 void		ft_init_struct_flags3(char *str, struct flags *new, va_list *list, int i);
 char		*ft_send(struct flags *flag, char **ret, va_list *list);
 int			ft_isduix(struct flags *flag);
+char		*ft_zero_pres(char *str, struct flags *flag);
 
 #endif
