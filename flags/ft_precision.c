@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 17:05:17 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/10 20:08:45 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,9 +20,9 @@ char	*apply_precision(char *str, struct flags *flag)
 
 	len = ft_strlen(str);
 	res = NULL;
-	if (flag->precision == -1 && (flag->type != 'p' && ft_isduix(flag) == 0))
+	if (flag->precision == -1 && (flag->type != 'p' && ft_isduix(flag) == 0 && flag->type != '%'))
 		return (ft_strdup(""));
-	if (flag->precision == -1 && (flag->type == 'p' || ft_isduix(flag) > 0))
+	if (flag->precision == -1 && (flag->type == 'p' || ft_isduix(flag) > 0 || flag->type != '%'))
 		return (ft_strdup(str));
 	if (flag->type == 'c' || flag->type == 'p' || flag->type == '%')
 		return (str);
@@ -69,24 +69,22 @@ char	*ft_neg(char *prec, int len_prec, char *str)
 	i = 0;
 	if (str[i] == '-')
 	{
-		prec = malloc(sizeof(char) * len_prec);
+		prec = malloc(sizeof(char) * len_prec + 2);
 		prec[i++] = '-';
-		while (i <= len_prec)
+		while (i < len_prec + 1)
 		{
 			prec[i] = '0';
 			i++;
 		}
 		prec[i] = '\0';
-		return (ft_strjoin(prec, str + 1));
+		str = ft_strjoin(prec, str + 1);
+		return (str);
 	}
 	else
 	{
 		prec = malloc(sizeof(char) * len_prec + 1);
-		while (len_prec > 0)
-		{
+		while (len_prec-- > 0)
 			prec[i++] = '0';
-			len_prec--;
-		}
 		prec[i] = '\0';
 		return (ft_strjoin(prec, str));
 	}

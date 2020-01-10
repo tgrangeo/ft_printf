@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:34:34 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 11:50:43 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/10 21:08:26 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,7 +17,7 @@ void		ft_printf_s(va_list *list, char **res)
 {
 	char	*str;
 
-	str = va_arg(*list, char *);
+	str = va_arg(*list, char*);
 	if (str == NULL)
 		*res = ft_strdup("(null)");
 	else

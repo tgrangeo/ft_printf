@@ -6,7 +6,7 @@
 #    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2020/01/09 12:57:47 by tgrangeo    ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/10 20:46:03 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -26,7 +26,7 @@ NAME = libftprintf.a
 
 RM		=	rm -f
 
-FLAGS	=	-Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror -g3
 
 all: $(NAME)
 

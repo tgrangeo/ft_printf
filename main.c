@@ -12,8 +12,8 @@ int main()
 
 //TODO:conversion P
 printf("-----conversion-----: %%p\n");
-dprintf(1, "%d\n", printf("|%0.0p|\n", 0));
-ft_printf("|%0.0p|\n", 0);
+dprintf(1, "%d\n", printf("|%0.p|\n", 0));
+ft_printf("|%0.p|\n", 0);
 
 //TODO:conversion u
 printf("-----conversion-----: %%u\n");
@@ -27,8 +27,8 @@ ft_printf("|%1.10i|\n", -987321654);
 
 //TODO:conversion d
 printf("-----conversion-----: %%d\n");
-dprintf(1, "%d\n", printf("|%0.*d|\n", 10, -987654321));
-ft_printf("|%0.*d|\n", 10, -987321654);
+dprintf(1, "%d\n", printf("|%0.54d|\n", -6622346));
+ft_printf("|%0.54d|\n", -6622346);
 
 //TODO:conversion c
 printf("-----conversion-----: %%c\n");
@@ -37,8 +37,8 @@ ft_printf("|%0.0c|\n", 0);
 
 //TODO:conversion s
 printf("-----conversion-----: %%s\n");
-dprintf(1, "%d\n", printf("|%0.0s|\n", 0));
-ft_printf("|%0.0s|\n", 0);
+dprintf(1, "%d\n", printf("|%s|\n", "\0"));
+ft_printf("|%s|\n", "\0");
 
 //TODO:conversion x
 printf("-----conversion-----: %%x\n");
@@ -52,7 +52,7 @@ ft_printf("|%0.0X|\n", 0);
 
 //TODO:conversion %
  printf("-----conversion-----: %%\n");
-dprintf(1, "%d\n", printf("|%0.0%|\n"));
-ft_printf("|%0.0%|\n");
+dprintf(1, "%d\n", printf("|%0.54%|\n"));
+ft_printf("|%0.54%|\n");
 return (1);
 }

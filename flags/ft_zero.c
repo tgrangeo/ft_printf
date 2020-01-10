@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/21 11:22:14 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 16:51:52 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/10 19:39:47 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,8 +24,6 @@ char	*ft_zero_width(char *str, struct flags *flag)
 	if (flag->width <= len || flag->width == 0 || flag->type == 's')
 		return (str);
 	len_width = flag->width - len;
-	if (str[0] == '-')
-		len_width--;
 	str = ft_neg(width, len_width, str);
 	return (str);
 }
