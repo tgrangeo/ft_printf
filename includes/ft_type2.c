@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:39:37 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 18:46:16 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 16:40:36 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,7 @@ void		ft_printf_x_upper(va_list *list, char **res, struct flags *flag)
 	unsigned long	n;
 
 	n = va_arg(*list, unsigned long);
+	dprintf(1, "[%lu]:", n);
 	if (n == 0 && (flag->precision == -1 || flag->precision == 0))
 		*res = ft_strdup("");
 	else
@@ -34,6 +35,7 @@ void		ft_printf_x(va_list *list, char **res, struct flags *flag)
 	char			*str;
 
 	n = va_arg(*list, unsigned long);
+	dprintf(1, "[%lu]:", n);
 	if (n == 0 && (flag->precision == -1 || flag->precision == 0))
 		*res = ft_strdup("");
 	else

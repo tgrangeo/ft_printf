@@ -3,56 +3,17 @@
 
 int main()
 {
-	int x = -42;
-	int n = -42;
-	char *s = "l'empereur grignoteur";
-	char c = 98;
-	unsigned int u = 842;
-	int i = 0;
+	int a;
+	int b;
+	int c = 0;
 
-//TODO:conversion P
-printf("-----conversion-----: %%p\n");
-dprintf(1, "%d\n", printf("|%0.p|\n", 0));
-ft_printf("|%0.p|\n", 0);
 
-//TODO:conversion u
-printf("-----conversion-----: %%u\n");
-dprintf(1, "%d\n", printf("|%0.0u|\n", 0));
-ft_printf("|%0.0u|\n", 0);
-
-//TODO:conversion i
-printf("-----conversion-----: %%i\n");
-dprintf(1, "%d\n", printf("|%1.10i|\n", -987654321));
-ft_printf("|%1.10i|\n", -987321654);
-
-//TODO:conversion d
-printf("-----conversion-----: %%d\n");
-dprintf(1, "%d\n", printf("|%0.54d|\n", -6622346));
-ft_printf("|%0.54d|\n", -6622346);
-
-//TODO:conversion c
-printf("-----conversion-----: %%c\n");
-dprintf(1, "%d\n", printf("|%0.0c|\n", 0));
-ft_printf("|%0.0c|\n", 0);
-
-//TODO:conversion s
-printf("-----conversion-----: %%s\n");
-dprintf(1, "%d\n", printf("|%s|\n", "\0"));
-ft_printf("|%s|\n", "\0");
-
-//TODO:conversion x
-printf("-----conversion-----: %%x\n");
-dprintf(1, "%d\n", printf("|%0.0x|\n", 0));
-ft_printf("|%0.0x|\n", 0);
-
-//TODO:conversion X
- printf("-----conversion-----: %%X\n");
-dprintf(1, "%d\n",printf("|%0.0X|\n", 0));
-ft_printf("|%0.0X|\n", 0);
-
-//TODO:conversion %
- printf("-----conversion-----: %%\n");
-dprintf(1, "%d\n", printf("|%0.54%|\n"));
-ft_printf("|%0.54%|\n");
+	a = printf("\n---------------\n%p\n%x\n%x\n%X\n%X\n%x\n%X\n\n", "sucepute", 123, 456, 789, 123456, 123456, 69);
+	b = ft_printf("\n---------------\n%p\n%x\n%x\n%X\n%X\n%x\n%X\n\n", "sucepute", 123, 456, 789, 123456, 123456, 69);
+	if ((a) == (b))
+		puts("OK\n");
+	else
+		puts("FAUX\n");
+	printf("printf = %d, moi = %d\n", a, b);
 return (1);
 }

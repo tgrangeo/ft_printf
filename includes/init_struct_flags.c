@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 17:09:19 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 15:23:04 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,7 +39,7 @@ void		ft_init_struct_flags2(char *str, struct flags *new)
 	i = 0;
 	while (str[i] && i < new->end)
 	{
-		if (str[i] == '-' && str[i - 1] == '%')
+		if (str[i] == '-' && (str[i - 1] == '%' || str[i - 1] == '0'))
 		{
 			new->signe = 1;
 			new->zero = 0;

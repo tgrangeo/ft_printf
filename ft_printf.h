@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 21:02:02 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 13:27:33 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -59,7 +59,7 @@ char		*ft_long_itoa_base(unsigned long n, char *base);
 void		ft_init_struct_flags2(char *str, struct flags *new);
 void		ft_init_struct_flags3(char *str, struct flags *new, va_list *list, int i);
 char		*ft_send(struct flags *flag, char **ret, va_list *list);
-int			ft_isduix(struct flags *flag);
+int			ft_test_type(struct flags *flag, char *str);
 char		*ft_zero_pres(char *str, struct flags *flag);
 
 #endif

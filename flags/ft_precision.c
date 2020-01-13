@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 20:08:45 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 13:59:47 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,12 +20,10 @@ char	*apply_precision(char *str, struct flags *flag)
 
 	len = ft_strlen(str);
 	res = NULL;
-	if (flag->precision == -1 && (flag->type != 'p' && ft_isduix(flag) == 0 && flag->type != '%'))
+	if (flag->precision == -1 && (ft_test_type(flag, "p%cduixX") == 0))
 		return (ft_strdup(""));
-	if (flag->precision == -1 && (flag->type == 'p' || ft_isduix(flag) > 0 || flag->type != '%'))
+	if (flag->precision == -1 || (ft_test_type(flag, "pc%") > 0 && flag->precision >= 0))
 		return (ft_strdup(str));
-	if (flag->type == 'c' || flag->type == 'p' || flag->type == '%')
-		return (str);
 	if (flag->type == 's')
 	{
 		if (len == 0)
@@ -35,7 +33,7 @@ char	*apply_precision(char *str, struct flags *flag)
 		if (flag->precision < len)
 			res = ft_strndup(str, flag->precision);
 	}
-	if (ft_isduix(flag) > 0)
+	if (ft_test_type(flag, "duixX"))
 		res = ft_duix(str, flag, len);
 	return (res);
 }
