@@ -6,27 +6,13 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 19:53:29 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 11:59:46 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-static int 	 ft_len(char *s1, char * s2)
-{
-	int j;
-	int i;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
-		j++;
-	return (i + j);
-}
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -37,8 +23,8 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	len = ft_len(s1, s2);
-	if (!(str = malloc(len * sizeof(char))))
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(str = malloc(len + 1 * sizeof(char))))
 		return (NULL);
 	while (s1[i])
 	{

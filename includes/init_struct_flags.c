@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 15:23:04 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/14 15:50:16 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int			init_struct_flags(struct flags *new, char *str, va_list *list)
+int			init_struct_flags(struct flags *new, char *str, va_list list)
 {
 	int i;
 
@@ -59,13 +59,13 @@ void		ft_init_struct_flags2(char *str, struct flags *new)
 }
 
 void		ft_init_struct_flags3(char *str, struct flags *new,
-									va_list *list, int i)
+									va_list list, int i)
 {
 	while (str[i] && i < new->end)
 	{
 		if (str[i] == '*' && str[i - 1] != '.')
 		{
-			new->width = va_arg(*list, int);
+			new->width = va_arg(list, int);
 			if (new->width < 0)
 			{
 				new->signe = 1;
@@ -75,7 +75,7 @@ void		ft_init_struct_flags3(char *str, struct flags *new,
 		}
 		if (str[i] == '*' && str[i - 1] == '.')
 		{
-			new->precision = va_arg(*list, int);
+			new->precision = va_arg(list, int);
 			if (new->precision < 0)
 			{
 				new->signe = 0;

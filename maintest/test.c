@@ -3,15 +3,15 @@
 /*                                                              /             */
 /*   test.c                                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tclaudel <tclaudel@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/28 10:15:11 by tclaudel     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/18 13:56:51 by manaccac    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:29:44 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../includes/libftprintf.h"
+#include "../ft_printf.h"
 
 #include <stdio.h>
 #include <limits.h>

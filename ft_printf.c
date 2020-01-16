@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:11:50 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 21:02:09 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/14 15:50:51 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,9 +29,9 @@ int			ft_printf(char *str, ...)
 	{
 		while (str[i] == '%' && (ft_isprint(str[i + 1]) > 0))
 		{
-			if (init_struct_flags(&flag, str + i, &list) > 0)
+			if (init_struct_flags(&flag, str + i, list) > 0)
 			{
-				len = len + ft_traitement(&list, &flag, &res);
+				len = len + ft_traitement(list, &flag, &res);
 				i = i + flag.end;
 				ft_putstr_fd(res, 1);
 				free(res);

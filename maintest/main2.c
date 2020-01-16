@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/18 13:00:10 by manaccac     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 15:49:47 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 11:15:45 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -151,7 +151,7 @@ int	main(void)
 	printf("\n");
 	printf("%.0x", 12);
 	printf("\n");
-	/*
+	
 	dprintf(1, "[%.0x]", 12);
 	printf("\n");
 	ft_printf("[%.0x]", 12);
@@ -681,7 +681,7 @@ int	main(void)
 	printf("%d", ft_printf("[%1.1s]", ""));
 	printf("\n");
 
-*/
+
 
 
 

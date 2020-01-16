@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 15:17:34 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 17:05:59 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_traitement(va_list *list, struct flags *flag, char **ret)
+int		ft_traitement(va_list list, struct flags *flag, char **ret)
 {
 	int len;
 
@@ -37,25 +37,25 @@ int		ft_traitement(va_list *list, struct flags *flag, char **ret)
 	return (len);
 }
 
-char	*ft_send(struct flags *flag, char **ret, va_list *list)
+char	*ft_send(struct flags *flag, char **ret, va_list list)
 {
 	if (flag->type == 'd')
 		ft_printf_d(list, ret, flag);
-	if (flag->type == 's')
+	else if (flag->type == 's')
 		ft_printf_s(list, ret);
-	if (flag->type == 'x')
+	else if (flag->type == 'x')
 		ft_printf_x(list, ret, flag);
-	if (flag->type == 'X')
+	else if (flag->type == 'X')
 		ft_printf_x_upper(list, ret, flag);
-	if (flag->type == 'u')
+	else if (flag->type == 'u')
 		ft_printf_u(list, ret, flag);
-	if (flag->type == 'i')
+	else if (flag->type == 'i')
 		ft_printf_d(list, ret, flag);
-	if (flag->type == 'p')
+	else if (flag->type == 'p')
 		ft_printf_p(list, ret, flag);
-	if (flag->type == 'c')
+	else if (flag->type == 'c')
 		ft_printf_c(list, ret);
-	if (flag->type == '%')
+	else if (flag->type == '%')
 		ft_printf_100(ret);
 	return (*ret);
 }

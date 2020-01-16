@@ -6,7 +6,7 @@
 #    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2020/01/13 15:05:44 by tgrangeo    ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/16 12:13:15 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -38,7 +38,7 @@ $(NAME): $(OBJS) $(HEADER)
 	ar rcs $(NAME) $(OBJS)
 
 test: fclean all
-	@gcc main.c $(NAME)
+	@gcc -g3 main.c $(NAME)
 	@./a.out
 
 t: fclean all
