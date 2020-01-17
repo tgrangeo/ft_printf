@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/18 13:00:10 by manaccac     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 11:15:45 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 14:36:58 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -143,6 +143,7 @@ int	main(void)
 	printf("\n");
 	printf("%d", printf("%.0x\n", 0));
 	printf("\n");
+	printf("\nICI????\n");
 	ft_printf("%.0x", -13);
 	printf("\n");
 	printf("%.0x", -13);
@@ -182,7 +183,7 @@ int	main(void)
 	printf("\n");
 	printf("\n");
 	printf("%d", dprintf(1, "[%5.0d]", 0));
-	printf("\n");
+	printf("\nICI\n");
 	printf("%d", ft_printf("[%5.0d]", 0));
 	printf("\n");
 	printf("\n");
@@ -304,6 +305,8 @@ int	main(void)
 	printf("\n");
 	printf("%d", ft_printf("[%-12.10d]", 2147483646));
 	printf("\n");
+	printf("%d", printf("[%-12.10d]", 2147483646));
+	printf("\n");
 	printf("%d", dprintf(1, "[%-50.9d]", INT_MAX));
 	printf("\n");
 	printf("%d", ft_printf("[%-50.9d]", INT_MAX));
@@ -361,7 +364,6 @@ int	main(void)
 	printf("%d", ft_printf("[%9.10x]", UINT_MAX));
 	printf("\n");
 	printf("%d", dprintf(1, "[%11.0X]", UINT_MAX));
-	printf("\n");
 	printf("%d", ft_printf("[%11.0X]", UINT_MAX));
 	printf("\n");
 	printf("%d", dprintf(1, "[%-11.10X]", UINT_MAX));

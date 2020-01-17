@@ -6,7 +6,7 @@
 #    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2020/01/16 12:13:15 by tgrangeo    ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/17 15:13:28 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -39,7 +39,7 @@ $(NAME): $(OBJS) $(HEADER)
 
 test: fclean all
 	@gcc -g3 main.c $(NAME)
-	@./a.out
+	@valgrind --leak-check=full ./a.out
 
 t: fclean all
 	@gcc main.c $(NAME)

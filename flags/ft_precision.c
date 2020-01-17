@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 17:10:12 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 19:00:36 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,19 +21,22 @@ char	*apply_precision(char *str, struct flags *flag)
 	len = ft_strlen(str);
 	res = NULL;
 	if (flag->precision == -1 && (ft_test_type(flag, "p%cduixX") == 0))
-		return (ft_strdup(""));
-	if (flag->precision == -1 || (ft_test_type(flag, "pc%") > 0 && flag->precision >= 0))
-		return (ft_strdup(str));
-	if (flag->type == 's')
 	{
-		if (len == 0)
-			res = ft_strdup("");
+		free(str);
+		return (ft_strdup(""));
+	}
+	if (flag->precision == -1 || (ft_test_type(flag, "pc%") > 0 &&
+									flag->precision >= 0))
+		return (str);
+	else if (flag->type == 's')
+	{
 		if (flag->precision >= len)
 			res = ft_strdup(str);
-		if (flag->precision < len)
+		else if (flag->precision < len)
 			res = ft_strndup(str, flag->precision);
+		free(str);
 	}
-	if (ft_test_type(flag, "duixX"))
+	else if (ft_test_type(flag, "duixX"))
 		res = ft_duix(str, flag, len);
 	return (res);
 }
@@ -51,12 +54,11 @@ char	*ft_duix(char *str, struct flags *flag, int len)
 		len--;
 	len_prec = flag->precision - len;
 	res = NULL;
-	if (len_prec == 0)
-		return (ft_strdup(str));
 	if (len_prec <= 0)
 		res = ft_strdup(str);
 	if (len_prec > 0)
 		res = ft_neg(prec, len_prec, str);
+	free(str);
 	return (res);
 }
 
@@ -84,6 +86,7 @@ char	*ft_neg(char *prec, int len_prec, char *str)
 		while (len_prec-- > 0)
 			prec[i++] = '0';
 		prec[i] = '\0';
-		return (ft_strjoin(prec, str));
+		str = ft_strjoin(prec, str);
+		return (str);
 	}
 }

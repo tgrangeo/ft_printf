@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 18:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 17:08:47 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 18:51:47 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,11 +19,18 @@ char	*width_precision(char *str, struct flags *flag)
 
 	res = NULL;
 	if (flag->type == 'c' || flag->type == 'p')
-		return (str);
+	{
+		res = ft_strdup(str);
+		free(str);
+		return (res);
+	}
 	if (flag->width == 0 && flag->precision == 0)
+	{
+		free(str);
 		return (ft_strdup(""));
+	}
 	if (flag->width >= 0 || flag->precision < 0)
-		res = apply_precision(str, flag);
-	printf("s:%s\n", res);
-	return (apply_width(res, flag));
+		str = apply_precision(str, flag);
+	res = apply_width(str, flag);
+	return (res);
 }

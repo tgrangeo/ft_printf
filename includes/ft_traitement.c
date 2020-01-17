@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 17:05:59 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 15:20:36 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,10 +18,11 @@ int		ft_traitement(va_list list, struct flags *flag, char **ret)
 	int len;
 
 	len = 0;
-	*ret = ft_strdup("");
 	*ret = ft_send(flag, ret, list);
 	if (flag->width > 0 && flag->precision == -2 && flag->zero == 0)
 		*ret = apply_width(*ret, flag);
+	else if (flag->zero > 0 && flag->width > 0 && flag->type == '%')
+		*ret = ft_zero_width(*ret, flag);
 	else if (flag->precision >= -1 && flag->width == 0)
 		*ret = apply_precision(*ret, flag);
 	else if (flag->precision >= -1 && flag->width > 0)

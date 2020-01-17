@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/06 12:56:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 16:19:04 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 15:16:56 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,8 +25,6 @@ static int		ft_taille(long int n, int len_base)
 		n = n / len_base;
 		i++;
 	}
-	if (n == 0)
-		return (i);
 	return (i);
 }
 

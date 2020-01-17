@@ -5,8 +5,8 @@
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/09 11:34:34 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/14 15:49:27 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/17 14:59:32 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/17 18:57:05 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,9 +58,9 @@ void		ft_printf_100(char **res)
 
 void		ft_printf_u(va_list list, char **res, struct flags *flag)
 {
-	long int d;
+	unsigned int d;
 
-	d = va_arg(list, long int);
+	d = va_arg(list, unsigned int);
 	if (d == 0 && (flag->precision == -1 || flag->precision == 0))
 		*res = ft_strdup("");
 	else

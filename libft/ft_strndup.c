@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 16:23:53 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/20 16:53:42 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 17:21:53 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,8 +19,8 @@ char	*ft_strndup(char *str, int len)
 	char	*res;
 
 	i = 0;
-	res = malloc(sizeof(char) * len);
-	while (str[i] && i < len)
+	res = malloc(sizeof(char) * len + 1);
+	while (str[i] && i <= len)
 	{
 		res[i] = str[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/16 16:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 15:23:41 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 18:16:06 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,10 @@ char	*apply_width(char *str, struct flags *flag)
 
 	i = 0;
 	if (flag->signe > 0)
+	{
+		free(str);
 		return (apply_neg_width(str, flag));
+	}
 	len = ft_strlen(str);
 	if (flag->width <= len || flag->width == 0)
 		return (str);
@@ -44,7 +47,6 @@ char	*apply_neg_width(char *str, struct flags *flag)
 
 	i = 0;
 	len = ft_strlen(str);
-	//printf("str:[%s]\n", str);
 	if (flag->width <= len || flag->width == 0)
 		return (str);
 	len_width = flag->width - len;

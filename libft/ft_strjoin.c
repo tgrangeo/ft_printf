@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 11:59:46 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 18:56:12 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,8 +18,8 @@ char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
-	char		*str;
-	int len;
+	char	*str;
+	int		len;
 
 	i = 0;
 	j = 0;
@@ -31,15 +31,14 @@ char	*ft_strjoin(char *s1, char *s2)
 		str[i] = s1[i];
 		i++;
 	}
-	if (s2)
+	while (s2[j] && i < len)
 	{
-		while (s2[j] && i < len)
-		{
-			str[i] = s2[j];
-			j++;
-			i++;
-		}
+		str[i] = s2[j];
+		j++;
+		i++;
 	}
 	str[i] = '\0';
+	free(s2);
+	free(s1);
 	return (str);
 }

@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:47:57 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/29 12:11:50 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 15:10:21 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, int start, size_t len)
 {
 	size_t	i;
 	char	*dest;

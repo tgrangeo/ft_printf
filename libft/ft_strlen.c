@@ -6,16 +6,16 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 12:44:44 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/10 20:50:11 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 15:08:30 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	size_t i;
+	int i;
 
 	i = 0;
 	while (s[i] != '\0')
