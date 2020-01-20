@@ -6,39 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 15:20:36 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 18:41:55 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_traitement(va_list list, struct flags *flag, char **ret)
-{
-	int len;
-
-	len = 0;
-	*ret = ft_send(flag, ret, list);
-	if (flag->width > 0 && flag->precision == -2 && flag->zero == 0)
-		*ret = apply_width(*ret, flag);
-	else if (flag->zero > 0 && flag->width > 0 && flag->type == '%')
-		*ret = ft_zero_width(*ret, flag);
-	else if (flag->precision >= -1 && flag->width == 0)
-		*ret = apply_precision(*ret, flag);
-	else if (flag->precision >= -1 && flag->width > 0)
-		*ret = width_precision(*ret, flag);
-	else if (flag->width > 0 && flag->zero > 0 && flag->signe == 0)
-		*ret = ft_zero_width(*ret, flag);
-	else if (flag->precision >= -1 && flag->zero == 1 && flag->type != '%')
-		*ret = ft_zero_pres(*ret, flag);
-	if (flag->type == 'c' && *ret[0] == '\0')
-		len++;
-	else
-		len = ft_strlen(*ret);
-	return (len);
-}
-
-char	*ft_send(struct flags *flag, char **ret, va_list list)
+static char		*ft_send(struct flags *flag, char **ret, va_list list)
 {
 	if (flag->type == 'd')
 		ft_printf_d(list, ret, flag);
@@ -61,19 +36,28 @@ char	*ft_send(struct flags *flag, char **ret, va_list list)
 	return (*ret);
 }
 
-int		ft_count(const char *str, int start)
+int			ft_traitement(va_list list, struct flags *flag, char **ret)
 {
-	int		i;
-	int		t;
-	char	*n;
+	int len;
 
-	i = start;
-	t = 0;
-	n = NULL;
-	while (ft_isdigit(str[i++]) > 0 && str[i])
-		t++;
-	n = ft_substr(str, start, t);
-	t = atoi(n);
-	free(n);
-	return (t);
+	len = 0;
+	*ret = ft_send(flag, ret, list);
+	if (flag->width > 0 && flag->precision == -2 && flag->zero == 0)
+		*ret = apply_width(*ret, flag);
+	else if (flag->zero > 0 && flag->width > 0 && flag->type == '%')
+		*ret = ft_zero_width(*ret, flag);
+	else if (flag->precision >= -1 && flag->width == 0)
+		*ret = apply_precision(*ret, flag);
+	else if (flag->precision >= -1 && flag->width > 0)
+		*ret = width_precision(*ret, flag);
+	else if (flag->width > 0 && flag->zero > 0 && flag->signe == 0)
+		*ret = ft_zero_width(*ret, flag);
+	else if (flag->precision >= -1 && flag->zero == 1 && flag->type != '%')
+		*ret = ft_zero_pres(*ret, flag);
+	if (flag->type == 'c' && *ret[0] == '\0')
+		len++;
+	else
+		len = ft_strlen(*ret);
+	//dprintf(1, "|%s|\n", *ret);
+	return (len);
 }

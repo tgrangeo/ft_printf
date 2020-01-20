@@ -6,7 +6,7 @@
 #    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2020/01/17 15:13:28 by tgrangeo    ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/20 20:43:05 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -14,9 +14,9 @@
 
 HEADER = ft_printf.h
 
-SRCS = ft_printf.c includes/ft_itoa_base.c includes/ft_putnbr_u.c  includes/ft_test_type.c\
-includes/ft_type.c includes/ft_type2.c includes/ft_traitement.c flags/ft_width.c flags/ft_precision.c\
-includes/init_struct_flags.c flags/ft_prec_width.c flags/ft_zero.c\
+SRCS = ft_printf.c includes/ft_itoa_base.c includes/ft_test_type.c\
+includes/ft_type.c includes/ft_type2.c includes/ft_traitement.c apply/apply_width.c apply/apply_precision.c\
+flags/init_struct_flags.c flags/ft_prec_width.c apply/apply_zero.c flags/ft_zero.c flags/ft_count.c\
 
 OBJS = ${SRCS:.c=.o}
 
@@ -38,12 +38,9 @@ $(NAME): $(OBJS) $(HEADER)
 	ar rcs $(NAME) $(OBJS)
 
 test: fclean all
-	@gcc -g3 main.c $(NAME)
-	@valgrind --leak-check=full ./a.out
-
-t: fclean all
-	@gcc main.c $(NAME)
-	@cp libftprintf.a test_printf/
+	make clean
+	gcc maintest/maindelamort.c $(NAME)
+	./a.out
 	
 clean:
 	$(RM) $(OBJS)

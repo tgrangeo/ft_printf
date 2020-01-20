@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/21 11:22:14 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 18:12:06 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 16:05:17 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,39 +16,39 @@
 char	*ft_zero_width(char *str, struct flags *flag)
 {
 	int		len;
-	char	*width;
-	int		len_width;
+	char	*zero;
+	int		len_zero;
 
 	len = ft_strlen(str);
-	width = NULL;
+	zero = NULL;
 	if (flag->width <= len || flag->width == 0 || flag->type == 's')
 	{
-		free(str);
+		//free(str);
 		return (str);
 	}
-	len_width = flag->width - len;
-	str = ft_neg(width, len_width, str);
+	len_zero = flag->width - len;
+	str = apply_zero(zero, len_zero, str);
 	return (str);
 }
 
 char	*ft_zero_pres(char *str, struct flags *flag)
 {
 	int		len;
-	char	*prec;
-	int		len_prec;
+	char	*zero;
+	int		len_zero;
 
 	len = ft_strlen(str);
 	if (str[0] == '-')
 		len--;
-	prec = NULL;
+	zero = NULL;
 	if (flag->precision <= len || flag->precision == 0 || flag->type == 's')
 	{
-		free(str);
+		//free(str);
 		return (str);
 	}
-	len_prec = flag->precision - len;
+	len_zero = flag->precision - len;
 	if (str[0] == '-')
-		len_prec--;
-	str = ft_neg(prec, len_prec, str);
+		len_zero--;
+	str = apply_zero(zero, len_zero, str);
 	return (str);
 }

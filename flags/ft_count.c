@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putnbr_u.c                                    .::    .:/ .      .::   */
+/*   ft_count.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/06 14:07:02 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 12:09:21 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/20 16:16:20 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/20 16:17:09 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void		ft_putchar(char c)
+int		ft_count(const char *str, int start)
 {
-	write(1, &c, 1);
-}
+	int		i;
+	int		t;
+	char	*n;
 
-void			ft_putnbr_u(int n)
-{
-	unsigned int nb;
-
-	nb = n;
-	if (n < 0)
-	{
-		nb = nb * -1;
-		if (nb == 1)
-			nb = 4294967295;
-		else
-			nb = 4294967295 - (nb - 1);
-	}
-	if (nb > 9)
-	{
-		ft_putnbr_u(nb / 10);
-		ft_putnbr_u(nb % 10);
-	}
-	else
-		ft_putchar(nb + 48);
+	i = start;
+	t = 0;
+	n = NULL;
+	while (ft_isdigit(str[i++]) > 0 && str[i])
+		t++;
+	n = ft_substr(str, start, t);
+	t = atoi(n);
+	return (t);
 }

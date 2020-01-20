@@ -6,21 +6,28 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/06 12:56:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 15:16:56 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 20:40:50 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int		ft_taille(long int n, int len_base)
+static int					ft_taille(long long n, char *base)
 {
-	int			i;
+	int				len_base;
+	int				i;
 
+	len_base = ft_strlen(base);
 	i = 0;
 	if (n == 0)
 		return (1);
-	while (n >= len_base)
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
+	while (n > 0)
 	{
 		n = n / len_base;
 		i++;
@@ -28,28 +35,68 @@ static int		ft_taille(long int n, int len_base)
 	return (i);
 }
 
-char			*ft_itoa_base(unsigned long n, char *base)
+static int					ft_long_taille(unsigned long n, char *base)
 {
-	char		*str;
-	int			len;
-	int			len_base;
-	long int	nb;
-	int			rest;
+	int				len_base;
+	int				i;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	nb = n;
 	len_base = ft_strlen(base);
-	len = ft_taille(nb, len_base);
-	if (!(str = malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	str[len] = '\0';
-	while (nb > 0 && len >= 0)
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		rest = nb % len_base;
-		str[len] = base[rest];
-		nb = nb / len_base;
-		len--;
+		n = n / len_base;
+		i++;
 	}
-	return (str);
+	return (i);
+}
+
+char				*ft_itoa_base(long n, char *base)
+{
+	long int		nb;
+	long int		len;
+	char			*res;
+	int				len_base;
+
+	len_base = ft_strlen(base);
+	len = ft_taille(n, base);
+	nb = n;
+	if (!(res = (char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	res[len--] = '\0';
+	if (nb == 0)
+		res[0] = 0 + 48;
+	if (nb < 0)
+	{
+		res[0] = '-';
+		nb = nb * -1;
+	}
+	while (nb > 0)
+	{
+		res[len--] = base[(nb % len_base)];
+		nb = nb / len_base;
+	}
+	return (res);
+}
+
+char				*ft_long_itoa_base(unsigned long n, char *base)
+{
+	long int		len;
+	char			*res;
+	int				len_base;
+
+	len_base = ft_strlen(base);
+	len = ft_long_taille(n, base);
+	if (!(res = (char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	res[len--] = '\0';
+	if (n == 0)
+		res[0] = 0 + 48;
+	while (n > 0)
+	{
+		res[len--] = base[(n % len_base)];
+		n = n / len_base;
+	}
+	return (res);
 }

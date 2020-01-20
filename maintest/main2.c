@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/18 13:00:10 by manaccac     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 14:36:58 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 17:34:53 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -131,6 +131,7 @@ int	main(void)
 	printf("\n");
 	printf("%d", printf("%.3s\n", NULL));
 	printf("\n");
+	printf("\nICI????\n");
 	printf("%d", ft_printf("%.3d\n", -19));
 	printf("\n");
 	printf("%d", printf("%.3d\n", -19));
@@ -143,7 +144,6 @@ int	main(void)
 	printf("\n");
 	printf("%d", printf("%.0x\n", 0));
 	printf("\n");
-	printf("\nICI????\n");
 	ft_printf("%.0x", -13);
 	printf("\n");
 	printf("%.0x", -13);
@@ -272,6 +272,7 @@ int	main(void)
 	printf("\n");
 	printf("%d", ft_printf("[%2.10s]", ""));
 	printf("\n");
+	printf("MARCHE PAS MAIS C NORMAL");
 	printf("\n");
 	printf("%d", dprintf(1, "[%6.10s]", "hello"));
 	printf("\n");
@@ -386,7 +387,6 @@ int	main(void)
 	printf("\n");
 	printf("%d", ft_printf("[%-6.10s]", "Hello"));
 	printf("\n");
-	printf("MARCHE PAS MAIS C NORMAL");
 	printf("%d", dprintf(1, "[%0-10d]", 42));
 	printf("\n");
 	printf("%d", ft_printf("[%0-10d]", 42));

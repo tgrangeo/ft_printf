@@ -1,19 +1,42 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_precision.c                                   .::    .:/ .      .::   */
+/*   apply_precision.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 19:00:36 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 18:29:27 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*apply_precision(char *str, struct flags *flag)
+static char		*ft_duix(char *str, struct flags *flag, int len)
+{
+	char	*res;
+	char	*prec;
+	int		len_prec;
+	int		i;
+
+	i = 0;
+	prec = NULL;
+	if (str[0] == '-')
+		len--;
+	len_prec = flag->precision - len;
+	res = NULL;
+	if (len_prec <= 0)
+	{
+		res = ft_strdup(str);
+		free(str);
+	}
+	else if (len_prec > 0)
+		res = apply_zero(prec, len_prec, str);
+	return (res);
+}
+
+char		*apply_precision(char *str, struct flags *flag)
 {
 	char	*res;
 	int		len;
@@ -39,54 +62,4 @@ char	*apply_precision(char *str, struct flags *flag)
 	else if (ft_test_type(flag, "duixX"))
 		res = ft_duix(str, flag, len);
 	return (res);
-}
-
-char	*ft_duix(char *str, struct flags *flag, int len)
-{
-	char	*res;
-	char	*prec;
-	int		len_prec;
-	int		i;
-
-	i = 0;
-	prec = NULL;
-	if (str[0] == '-')
-		len--;
-	len_prec = flag->precision - len;
-	res = NULL;
-	if (len_prec <= 0)
-		res = ft_strdup(str);
-	if (len_prec > 0)
-		res = ft_neg(prec, len_prec, str);
-	free(str);
-	return (res);
-}
-
-char	*ft_neg(char *prec, int len_prec, char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-')
-	{
-		prec = malloc(sizeof(char) * len_prec + 2);
-		prec[i++] = '-';
-		while (i < len_prec + 1)
-		{
-			prec[i] = '0';
-			i++;
-		}
-		prec[i] = '\0';
-		str = ft_strjoin(prec, str + 1);
-		return (str);
-	}
-	else
-	{
-		prec = malloc(sizeof(char) * len_prec + 1);
-		while (len_prec-- > 0)
-			prec[i++] = '0';
-		prec[i] = '\0';
-		str = ft_strjoin(prec, str);
-		return (str);
-	}
 }

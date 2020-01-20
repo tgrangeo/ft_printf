@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 11:39:37 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 18:57:21 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 19:30:39 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -43,5 +43,5 @@ void		ft_printf_p(va_list list, char **res, struct flags *flag)
 	if (flag->precision == -1 && n == 0)
 		*res = ft_strdup("0x");
 	else
-		*res = ft_strjoin(ft_strdup("0x"), ft_itoa_base(n, "0123456789abcdef"));
+		*res = ft_strjoin(ft_strdup("0x"), ft_long_itoa_base(n, "0123456789abcdef"));
 }

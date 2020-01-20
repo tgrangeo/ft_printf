@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_printf.c                                      .::    .:/ .      .::   */
+/*   apply_zero.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/03 11:11:50 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 17:16:50 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/20 16:04:27 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/20 18:28:00 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int			ft_printf(char *str, ...)
+char	*apply_zero(char *prec, int len_prec, char *str)
 {
-	va_list				list;
-	struct flags		flag;
-	char				*res;
-	int					i;
-	int					len;
+	int	i;
+	char *res;
 
-	va_start(list, str);
-	res = NULL;
 	i = 0;
-	len = 0;
-	while (str[i])
+	if (str[i] == '-')
 	{
-		while (str[i] == '%' && (ft_isprint(str[i + 1]) > 0))
+		prec = malloc(sizeof(char) * (len_prec + 2));
+		prec[i++] = '-';
+		while (i < len_prec + 1)
 		{
-			if (init_struct_flags(&flag, str + i, list) > 0)
-			{
-				len = len + ft_traitement(list, &flag, &res);
-				i = i + flag.end;
-				ft_putstr_fd(res, 1);
-				free(res);
-			}
+			prec[i] = '0';
 			i++;
 		}
-		write(1, &str[i], 1);
-		i++;
-		len++;
+		prec[i] = '\0';
+		res = ft_strjoin(prec, str + 1);
 	}
-	return (len);
+	else
+	{
+		prec = malloc(sizeof(char) * len_prec + 1);
+		while (len_prec-- > 0)
+			prec[i++] = '0';
+		prec[i] = '\0';
+		res = ft_strjoin(prec, str);
+	}
+	free(prec);
+	free(str);
+	return (res);
 }
