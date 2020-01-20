@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 18:41:55 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:08:03 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,6 +58,5 @@ int			ft_traitement(va_list list, struct flags *flag, char **ret)
 		len++;
 	else
 		len = ft_strlen(*ret);
-	//dprintf(1, "|%s|\n", *ret);
 	return (len);
 }

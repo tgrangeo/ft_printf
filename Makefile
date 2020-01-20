@@ -6,7 +6,7 @@
 #    By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/12/03 10:28:31 by thomasgrang  #+#   ##    ##    #+#        #
-#    Updated: 2020/01/20 20:43:05 by tgrangeo    ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/20 21:14:07 by tgrangeo    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -39,8 +39,8 @@ $(NAME): $(OBJS) $(HEADER)
 
 test: fclean all
 	make clean
-	gcc maintest/maindelamort.c $(NAME)
-	./a.out
+	gcc maintest/test.c $(NAME)
+	valgrind --leak-check=full ./a.out a
 	
 clean:
 	$(RM) $(OBJS)

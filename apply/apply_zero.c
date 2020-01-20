@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 16:04:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 18:28:00 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:04:39 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,7 @@ char	*apply_zero(char *prec, int len_prec, char *str)
 	char *res;
 
 	i = 0;
+	res = NULL;
 	if (str[i] == '-')
 	{
 		prec = malloc(sizeof(char) * (len_prec + 2));

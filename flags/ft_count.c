@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 16:16:20 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 16:17:09 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 20:55:56 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,5 +26,6 @@ int		ft_count(const char *str, int start)
 		t++;
 	n = ft_substr(str, start, t);
 	t = atoi(n);
+	free(n);
 	return (t);
 }
