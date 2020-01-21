@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 18:29:27 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 16:40:14 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static char		*ft_duix(char *str, struct flags *flag, int len)
+static char		*ft_duix(char *str, t_flags *flag, int len)
 {
 	char	*res;
 	char	*prec;
@@ -22,9 +22,11 @@ static char		*ft_duix(char *str, struct flags *flag, int len)
 
 	i = 0;
 	prec = NULL;
+	len_prec = len;
 	if (str[0] == '-')
 		len--;
-	len_prec = flag->precision - len;
+	if (flag->precision > -1)
+		len_prec = flag->precision - len;
 	res = NULL;
 	if (len_prec <= 0)
 	{
@@ -36,7 +38,7 @@ static char		*ft_duix(char *str, struct flags *flag, int len)
 	return (res);
 }
 
-char		*apply_precision(char *str, struct flags *flag)
+char			*apply_precision(char *str, t_flags *flag)
 {
 	char	*res;
 	int		len;

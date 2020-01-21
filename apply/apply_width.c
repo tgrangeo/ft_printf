@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/16 16:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:07:50 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:35:30 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static char		*apply_neg_width(char *str, struct flags *flag, char *res)
+static char			*apply_neg_width(char *str, t_flags *flag, char *res)
 {
 	int		len;
 	char	*width;
@@ -35,15 +35,30 @@ static char		*apply_neg_width(char *str, struct flags *flag, char *res)
 	return (res);
 }
 
-char		*apply_width(char *str, struct flags *flag)
+static char			*apply_width2(char *str, t_flags *flag, int len)
 {
-	int		len;
 	char	*width;
 	int		len_width;
 	char	*res;
 	int		i;
 
 	i = 0;
+	len_width = flag->width - len;
+	width = malloc(sizeof(char) * len_width + 1);
+	while (len_width-- > 0)
+		width[i++] = ' ';
+	width[i] = '\0';
+	res = ft_strjoin(width, str);
+	free(str);
+	free(width);
+	return (res);
+}
+
+char				*apply_width(char *str, t_flags *flag)
+{
+	int		len;
+	char	*res;
+
 	len = ft_strlen(str);
 	res = NULL;
 	if (flag->signe > 0)
@@ -54,15 +69,6 @@ char		*apply_width(char *str, struct flags *flag)
 		free(str);
 	}
 	else
-	{
-		len_width = flag->width - len;
-		width = malloc(sizeof(char) * len_width + 1);
-		while (len_width-- > 0)
-			width[i++] = ' ';
-		width[i] = '\0';
-		res = ft_strjoin(width, str);
-		free(str);
-		free(width);
-	}
+		res = apply_width2(str, flag, len);
 	return (res);
 }

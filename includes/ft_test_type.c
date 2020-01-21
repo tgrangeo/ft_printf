@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 12:54:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 18:56:54 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:24:22 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_test_type(struct flags *flag, char *str)
+int		ft_test_type(t_flags *flag, char *str)
 {
 	int i;
 

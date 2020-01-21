@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/18 13:00:10 by manaccac     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 17:34:53 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 16:17:26 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -144,6 +144,7 @@ int	main(void)
 	printf("\n");
 	printf("%d", printf("%.0x\n", 0));
 	printf("\n");
+	dprintf(1, "TEST\n");
 	ft_printf("%.0x", -13);
 	printf("\n");
 	printf("%.0x", -13);
@@ -152,7 +153,6 @@ int	main(void)
 	printf("\n");
 	printf("%.0x", 12);
 	printf("\n");
-	
 	dprintf(1, "[%.0x]", 12);
 	printf("\n");
 	ft_printf("[%.0x]", 12);
@@ -272,7 +272,6 @@ int	main(void)
 	printf("\n");
 	printf("%d", ft_printf("[%2.10s]", ""));
 	printf("\n");
-	printf("MARCHE PAS MAIS C NORMAL");
 	printf("\n");
 	printf("%d", dprintf(1, "[%6.10s]", "hello"));
 	printf("\n");
@@ -288,7 +287,7 @@ int	main(void)
 	printf("\n");
 	printf("%d", dprintf(1, "[%12.10d]", INT_MAX));
 	printf("\n");
-	printf("%d", ft_printf("[%12.10d]", 2147483646));
+	printf("%d", ft_printf("[%12.10d]", INT_MAX));
 	printf("\n");
 	printf("%d", dprintf(1, "[%9.10d]", INT_MAX));
 	printf("\n");

@@ -6,32 +6,42 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 16:04:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:04:39 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 11:19:17 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*apply_zero(char *prec, int len_prec, char *str)
+static char		*apply_neg(char *prec, int len_prec, char *str)
 {
-	int	i;
-	char *res;
+	int		i;
+	char	*res;
+
+	i = 0;
+	prec = malloc(sizeof(char) * (len_prec + 2));
+	prec[i++] = '-';
+	while (i < len_prec + 1)
+	{
+		prec[i] = '0';
+		i++;
+	}
+	prec[i] = '\0';
+	res = ft_strjoin(prec, str + 1);
+	free(prec);
+	free(str);
+	return (res);
+}
+
+char			*apply_zero(char *prec, int len_prec, char *str)
+{
+	int		i;
+	char	*res;
 
 	i = 0;
 	res = NULL;
 	if (str[i] == '-')
-	{
-		prec = malloc(sizeof(char) * (len_prec + 2));
-		prec[i++] = '-';
-		while (i < len_prec + 1)
-		{
-			prec[i] = '0';
-			i++;
-		}
-		prec[i] = '\0';
-		res = ft_strjoin(prec, str + 1);
-	}
+		res = apply_neg(prec, len_prec, str);
 	else
 	{
 		prec = malloc(sizeof(char) * len_prec + 1);
@@ -39,8 +49,8 @@ char	*apply_zero(char *prec, int len_prec, char *str)
 			prec[i++] = '0';
 		prec[i] = '\0';
 		res = ft_strjoin(prec, str);
+		free(prec);
+		free(str);
 	}
-	free(prec);
-	free(str);
 	return (res);
 }

@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 18:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 20:49:38 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:24:22 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*width_precision(char *str, struct flags *flag)
+char	*width_precision(char *str, t_flags *flag)
 {
 	char *res;
 

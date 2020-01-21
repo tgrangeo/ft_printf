@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/17 14:59:32 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 18:57:05 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 14:54:59 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,10 +18,12 @@ void		ft_printf_s(va_list list, char **res)
 	char	*str;
 
 	str = va_arg(list, char*);
-	if (str == NULL)
-		*res = ft_strdup("(null)");
-	else
+	if (str != NULL)
+	{
 		*res = ft_strdup(str);
+	}
+	else
+		*res = ft_strdup("(null)");
 }
 
 void		ft_printf_c(va_list list, char **res)
@@ -40,7 +42,7 @@ void		ft_printf_c(va_list list, char **res)
 	}
 }
 
-void		ft_printf_d(va_list list, char **res, struct flags *flag)
+void		ft_printf_d(va_list list, char **res, t_flags *flag)
 {
 	int d;
 
@@ -56,7 +58,7 @@ void		ft_printf_100(char **res)
 	*res = ft_strdup("%");
 }
 
-void		ft_printf_u(va_list list, char **res, struct flags *flag)
+void		ft_printf_u(va_list list, char **res, t_flags *flag)
 {
 	unsigned int d;
 

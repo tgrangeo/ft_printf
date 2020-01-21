@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/06 12:56:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:05:01 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:30:50 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int					ft_taille(long long n, char *base)
+static int			ft_taille(long long n, char *base)
 {
 	int				len_base;
 	int				i;
@@ -35,7 +35,7 @@ static int					ft_taille(long long n, char *base)
 	return (i);
 }
 
-static int					ft_long_taille(unsigned long n, char *base)
+static int			ft_long_taille(unsigned long n, char *base)
 {
 	int				len_base;
 	int				i;

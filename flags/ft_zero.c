@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/21 11:22:14 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:13:45 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 16:34:23 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*ft_zero_width(char *str, struct flags *flag)
+char	*ft_zero_width(char *str, t_flags *flag)
 {
 	int		len;
 	char	*zero;
@@ -26,11 +26,10 @@ char	*ft_zero_width(char *str, struct flags *flag)
 		return (str);
 	len_zero = flag->width - len;
 	res = apply_zero(zero, len_zero, str);
-	//free(str);
 	return (res);
 }
 
-char	*ft_zero_pres(char *str, struct flags *flag)
+char	*ft_zero_pres(char *str, t_flags *flag)
 {
 	int		len;
 	char	*zero;

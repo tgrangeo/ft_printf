@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:08:03 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 12:43:51 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static char		*ft_send(struct flags *flag, char **ret, va_list list)
+static char		*ft_send(t_flags *flag, char **ret, va_list list)
 {
 	if (flag->type == 'd')
 		ft_printf_d(list, ret, flag);
@@ -36,7 +36,7 @@ static char		*ft_send(struct flags *flag, char **ret, va_list list)
 	return (*ret);
 }
 
-int			ft_traitement(va_list list, struct flags *flag, char **ret)
+int				ft_traitement(va_list list, t_flags *flag, char **ret)
 {
 	int len;
 
@@ -58,5 +58,6 @@ int			ft_traitement(va_list list, struct flags *flag, char **ret)
 		len++;
 	else
 		len = ft_strlen(*ret);
+	//dprintf(1, "|%s|\n", *ret);
 	return (len);
 }

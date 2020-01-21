@@ -3,20 +3,20 @@
 
 int main()
 {
-	printf("%d", printf("[%.p]", "bonjour"));
+	printf("|%s|", "");
 	printf("\n");
-	printf("%d", ft_printf("[%.p]", "bonjour"));
-	printf("\n");
-	printf("%d", printf("[%.p]", 54615146));
-	printf("\n");
-	printf("%d", ft_printf("[%.p]", 54615146));
-	printf("\n");
-	printf("%d", printf("[%.p]", (void *)256));
-	printf("\n");
-	printf("%d", ft_printf("[%.p]", (void *)256));
-	printf("\n");
-	printf("%d", dprintf(1, "[%p]", 4294967296));
-	printf("\n");
-	printf("%d", ft_printf("[%p]", 4294967296));
-return (1);
+	ft_printf("|%s|", "");
+
+	dprintf(1, "\n");
+	dprintf(1, "\n");
+	dprintf(1, "\n");
+	ft_printf("%.0x", -13);
+	dprintf(1, "\n");
+//	dprintf(1, "/%.0x/", -13);
+	dprintf(1, "\n");
+	ft_printf("%.0x", 12);
+	dprintf(1, "\n");
+//	dprintf(1, "/%.0x/", 12);
+	dprintf(1, "\n");
+	return (1);
 }

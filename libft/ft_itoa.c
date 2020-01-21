@@ -6,13 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/22 12:41:35 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 17:59:57 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 11:13:00 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_taille(long int n)
 {
@@ -84,7 +83,6 @@ char		*ft_long_itoa(long int n)
 	int			len;
 
 	len = ft_taille(n);
-	//dprintf(1, "len:%d\n", len + 1);
 	if (n == 0)
 		return (ft_zero(n));
 	if (!(str = malloc((len + 1) * sizeof(char))))

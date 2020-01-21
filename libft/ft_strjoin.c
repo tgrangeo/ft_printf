@@ -6,13 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 18:23:28 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 11:13:08 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strjoin(char *s1, char *s2)
 {

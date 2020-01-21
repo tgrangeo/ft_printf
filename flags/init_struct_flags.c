@@ -6,14 +6,14 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 16:54:17 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:24:22 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int			init_struct_flags(struct flags *new, char *str, va_list list)
+int			init_struct_flags(t_flags *new, char *str, va_list list)
 {
 	int i;
 
@@ -32,7 +32,7 @@ int			init_struct_flags(struct flags *new, char *str, va_list list)
 		return (0);
 }
 
-void		ft_init_struct_flags2(char *str, struct flags *new)
+void		ft_init_struct_flags2(char *str, t_flags *new)
 {
 	int i;
 
@@ -58,7 +58,7 @@ void		ft_init_struct_flags2(char *str, struct flags *new)
 	}
 }
 
-void		ft_init_struct_flags3(char *str, struct flags *new,
+void		ft_init_struct_flags3(char *str, t_flags *new,
 									va_list list, int i)
 {
 	while (str[i] && i < new->end)
