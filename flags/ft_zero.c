@@ -6,12 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/21 11:22:14 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 16:34:23 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 char	*ft_zero_width(char *str, t_flags *flag)
 {

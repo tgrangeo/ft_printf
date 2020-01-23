@@ -6,12 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:24:22 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 int			init_struct_flags(t_flags *new, char *str, va_list list)
 {

@@ -6,12 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/16 16:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:35:30 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 static char			*apply_neg_width(char *str, t_flags *flag, char *res)
 {

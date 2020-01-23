@@ -6,12 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 12:43:51 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 static char		*ft_send(t_flags *flag, char **ret, va_list list)
 {
@@ -58,6 +58,5 @@ int				ft_traitement(va_list list, t_flags *flag, char **ret)
 		len++;
 	else
 		len = ft_strlen(*ret);
-	//dprintf(1, "|%s|\n", *ret);
 	return (len);
 }

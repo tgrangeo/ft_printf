@@ -6,12 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 16:04:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 11:19:17 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 static char		*apply_neg(char *prec, int len_prec, char *str)
 {
