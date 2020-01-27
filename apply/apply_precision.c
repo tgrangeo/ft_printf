@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   apply_precision.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 17:53:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 22:39:54 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,18 +22,15 @@ static char		*ft_duix(char *str, t_flags *flag, int len)
 
 	i = 0;
 	prec = NULL;
+	res = NULL;
 	len_prec = len;
 	if (str[0] == '-')
 		len--;
 	if (flag->precision > -1)
 		len_prec = flag->precision - len;
-	res = NULL;
 	if (len_prec <= 0)
-	{
-		res = ft_strdup(str);
-		free(str);
-	}
-	else if (len_prec > 0)
+		return (str);
+	else
 		res = apply_zero(prec, len_prec, str);
 	return (res);
 }

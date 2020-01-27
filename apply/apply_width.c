@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   apply_width.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/16 16:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 22:48:03 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,6 +22,7 @@ static char			*apply_neg_width(char *str, t_flags *flag, char *res)
 
 	i = 0;
 	len = ft_strlen(str);
+	//dprintf(1, "SALUT !!!!!!!!!!!!!!!!!!!!!!!!");
 	if (flag->width <= len || flag->width == 0)
 		return (str);
 	len_width = flag->width - len;

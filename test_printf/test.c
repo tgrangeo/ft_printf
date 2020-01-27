@@ -3,15 +3,15 @@
 /*                                                              /             */
 /*   test.c                                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: tclaudel <tclaudel@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/28 10:15:11 by tclaudel     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 11:40:56 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/02 11:27:18 by tclaudel    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 #include <stdio.h>
 #include <limits.h>
@@ -1374,7 +1374,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	i = 0;
 	while (i < 20)
 	{
-		//printf("[%s]\n", str[i]);
 		tested++;
 		print_testing("\"|%s|\\n\",  random");
 		if (printf("printf    :\t|%s|\n", str[i]) == ft_printf("ft_printf :\t|%s|\n", str[i]))
@@ -1411,7 +1410,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	while (i < 20)
 	{
 		tested++;
-		//printf("str[i]:/%s/\n", str[i]);
 		print_testing("\"|%.54s|\\n\",  random");
 		if (printf("printf    :\t|%.54s|\n", str[i]) == ft_printf("ft_printf :\t|%.54s|\n", str[i]))
 			print_ok(&testok);
@@ -1424,7 +1422,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	while (i < 20)
 	{
 		tested++;
-		printf("str[i]:/%s/\n", str[i]);
 		print_testing("\"|%.0s|\\n\",  random");
 		if (printf("printf    :\t|%.0s|\n", str[i]) == ft_printf("ft_printf :\t|%.0s|\n", str[i]))
 			print_ok(&testok);
@@ -1460,7 +1457,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	while (i < 20)
 	{
 		tested++;
-		printf("str[i]:/%s/\n", str[i]);
 		print_testing("\"|%.2s|\\n\",  random");
 		if (printf("printf    :\t|%.2s|\n", str[i]) == ft_printf("ft_printf :\t|%.2s|\n", str[i]))
 			print_ok(&testok);
@@ -1487,7 +1483,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	while (i < 20)
 	{
 		tested++;
-		printf("str[i]:/%s/\n", str[i]);
 		print_testing("\"|%p|\\n\",  random");
 		if (printf("printf    :\t|%p|\n", str[i]) == ft_printf("ft_printf :\t|%p|\n", str[i]))
 			print_ok(&testok);
@@ -1500,7 +1495,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	while (i < 20)
 	{
 		tested++;
-		printf("str[i]:/%s/\n", str[i]);
 		print_testing("\"|%.p|\\n\",  random");
 		if (printf("printf    :\t|%.p|\n", str[i]) == ft_printf("ft_printf :\t|%.p|\n", str[i]))
 			print_ok(&testok);
@@ -1551,7 +1545,6 @@ dprintf(1, ">------------------ U TEST ------------------<\n\n");
 	while (i < 20)
 	{
 		tested++;
-		printf("nb[i]:%d\n", nb[i]);
 		print_testing("\"|%.d|\\n\",  random");
 		if (printf("printf    :\t|%.d|\n", nb[i]) == ft_printf("ft_printf :\t|%.d|\n", nb[i]))
 			print_ok(&testok);
@@ -2269,7 +2262,6 @@ if(ft_c_in_str('c', av[1])|| ft_c_in_str('a', av[1]))
 	{
 		tested++;
 		print_testing("\"|%0.0x|\\n\", random");
-		dprintf(1, "+++%c++++", unb[i]);
 		if (printf("printf    :\t|%0.0x|\n", unb[i]) == ft_printf("ft_printf :\t|%0.0x|\n", unb[i]))
 			print_ok(&testok);
 		else

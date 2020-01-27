@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_traitement.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/10 16:07:56 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 23:00:19 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,7 +42,7 @@ int				ft_traitement(va_list list, t_flags *flag, char **ret)
 
 	len = 0;
 	*ret = ft_send(flag, ret, list);
-	if (flag->width > 0 && flag->precision == -2 && flag->zero == 0)
+	if (flag->width > 0 && flag->precision <= -2 && flag->zero == 0)
 		*ret = apply_width(*ret, flag);
 	else if (flag->zero > 0 && flag->width > 0 && flag->type == '%')
 		*ret = ft_zero_width(*ret, flag);

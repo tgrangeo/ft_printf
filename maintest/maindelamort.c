@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   maindelamort.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/15 13:25:19 by manaccac     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/27 17:02:10 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 23:02:42 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -1361,50 +1361,50 @@ int	main()
 	printf("%d", dprintf(1, "[%05.1x]", 42));
 	printf("\n");
 	printf("%d", ft_printf("[%05.1x]", 42));
-	// printf("\n");
+	 printf("\n");
 
-	// printf("%d", dprintf(1, "[%*.*s]", 5, 10, "hello"));
-	// printf("\n");
-	// printf("%d", ft_printf("[%*.*s]", 5, 10, "hello"));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%*.*d]", 5, 0, 0));
-	// printf("\n");
-	// printf("%d", ft_printf("[%*.*d]", 5, 0, 0));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%*.*s]", 2, -5, "Hello"));
-	// printf("\n");
-	// printf("%d", ft_printf("[%*.*s]", 2, -5, "Hello"));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%10.3x]", -24));
-	// printf("\n");
-	// printf("%d", ft_printf("[%10.3x]", -24));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%10.5x]", -24));
-	// printf("\n");
-	// printf("%d", ft_printf("[%10.5x]", -24));
-	// printf("\n");
-	// printf("%d", printf("[%*.*d]", 25, 10, 45));
-	// printf("\n");
-	// printf("%d", ft_printf("[%*.*d]", 25, 10, 45));
-	// printf("\n");
-	// printf("%d", printf("[%*.*d]", 0, 0, 45));
-	// printf("\n");
-	// printf("%d", ft_printf("[%*.*d]", 0, 0, 45));
-	// printf("\n");
-	// printf("%d", printf("[%*.*d]", 0, -5, 45));
-	// printf("\n");
-	// printf("%d", ft_printf("[%*.*d]", 0, -5, 45));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%20.10s]", "Salut"));
-	// printf("\n");
-	// printf("%d", ft_printf("[%20.10s]", "Salut"));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%p]", (void*)1));
-	// printf("\n");
-	// printf("%d", ft_printf("[%p]", (void*)1));
-	// printf("\n");
-	// printf("%d", dprintf(1, "[%p]", (void*)-1));
-	// printf("\n");
+	 printf("%d", dprintf(1, "[%*.*s]", 5, 10, "hello"));
+	 printf("\n");
+	 printf("%d", ft_printf("[%*.*s]", 5, 10, "hello"));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%*.*d]", 5, 0, 0));
+	 printf("\n");
+	 printf("%d", ft_printf("[%*.*d]", 5, 0, 0));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%*.*s]", 2, -5, "Hello"));
+	 printf("\n");
+	 printf("%d", ft_printf("[%*.*s]", 2, -5, "Hello"));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%10.3x]", -24));
+	 printf("\n");
+	 printf("%d", ft_printf("[%10.3x]", -24));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%10.5x]", -24));
+	 printf("\n");
+	 printf("%d", ft_printf("[%10.5x]", -24));
+	 printf("\n");
+	 printf("%d", printf("[%*.*d]", 25, 10, 45));
+	 printf("\n");
+	 printf("%d", ft_printf("[%*.*d]", 25, 10, 45));
+	 printf("\n");
+	 printf("%d", printf("[%*.*d]", 0, 0, 45));
+	 printf("\n");
+	 printf("%d", ft_printf("[%*.*d]", 0, 0, 45));
+	 printf("\n");
+	 printf("%d", printf("[%*.*d]", 0, -5, 45));
+	 printf("\n");
+	 printf("%d", ft_printf("[%*.*d]", 0, -5, 45));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%20.10s]", "Salut"));
+	 printf("\n");
+	 printf("%d", ft_printf("[%20.10s]", "Salut"));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%p]", (void*)1));
+	 printf("\n");
+	 printf("%d", ft_printf("[%p]", (void*)1));
+	 printf("\n");
+	 printf("%d", dprintf(1, "[%p]", (void*)-1));
+	 printf("\n");
 	printf("%d", ft_printf("[%p]", (void*)-1));
 	printf("\n");
 	printf("%d", dprintf(1, "[%p]", (void*)1000));

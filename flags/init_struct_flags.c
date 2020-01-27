@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   init_struct_flags.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 16:40:38 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 22:30:38 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -76,11 +76,6 @@ void		ft_init_struct_flags3(char *str, t_flags *new,
 		if (str[i] == '*' && str[i - 1] == '.')
 		{
 			new->precision = va_arg(list, int);
-			if (new->precision < 0)
-			{
-				new->signe = 0;
-				new->zero = 0;
-			}
 		}
 		i++;
 	}
