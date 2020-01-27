@@ -6,12 +6,12 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/11 12:36:04 by lolopez      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 11:50:21 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 16:58:23 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 
 #include <stdio.h>
 #include <limits.h>

@@ -13,7 +13,7 @@
 
 
 #include <stdio.h>
-#include "../ft_printf.h"
+#include "../libftprintf.h"
 #define BLUE dprintf(1, "\e[36m");
 #define EOC dprintf(1, "\e[39m");
 #define KO dprintf(1, "Valeur de retour : \e[31m[KO]\e[39m\n");

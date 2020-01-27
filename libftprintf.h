@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   libftprintf.h                                      .::    .:/ .      .::   */
+/*   libftprintf.h                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/03 11:12:46 by thomasgrang  #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 16:09:12 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 13:58:43 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include "libft/libft.h"
 # include <stdarg.h>
