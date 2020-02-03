@@ -75,4 +75,9 @@ int		main(void)
 	dprintf(1, "-%d-", ft_printf("mine  |%-40.*x|", -9, 256));
 	dprintf(1, "\n");
 	dprintf(1, "\n");
+	dprintf(1, "-%d-", dprintf(1, "expect|%42.p|", 0));
+	dprintf(1, "\n");
+	dprintf(1, "-%d-", ft_printf("mine  |%42.p|", 0));
+	dprintf(1, "\n");
+	dprintf(1, "\n");
 }

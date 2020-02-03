@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   init_struct_flags.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/17 16:34:16 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/27 22:30:38 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/31 13:04:19 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/31 13:04:22 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */

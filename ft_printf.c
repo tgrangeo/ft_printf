@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/23 15:26:52 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 15:29:57 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 17:17:47 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,8 @@ static int	ft_put(va_list list, t_flags *flag)
 	int			len;
 
 	len = ft_traitement(list, flag, &res);
+	if (flag->type == 'c' && res[0] == '\0')
+		write(1, "\0", 1);
 	ft_putstr_fd(res, 1);
 	free(res);
 	return (len);

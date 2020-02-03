@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_prec_width.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/20 18:21:58 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/27 22:50:05 by thomasgrang ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/31 13:02:01 by tgrangeo    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,7 +25,6 @@ char	*width_precision(char *str, t_flags *flag)
 	}
 	if (flag->precision != -2)
 		str = apply_precision(str, flag);
-	//dprintf(1, "###############    %d    ###########\n", flag->signe);
 	res = apply_width(str, flag);
 	return (res);
 }
